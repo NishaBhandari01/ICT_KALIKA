@@ -1,122 +1,200 @@
+
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { Mail, MapPin, Phone, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F172A] text-white">
+    <footer className="relative overflow-hidden border-t border-[#05F2DB]/15 bg-[#0B1120] text-[#ebe6e2]">
 
-      <div className="mx-auto max-w-6xl px-6 py-16 md:px-8">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+
+      <div className="pointer-events-none absolute -top-32 left-1/4 h-64 w-64 rounded-full bg-[#05F2DB]/5 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 rounded-full bg-blue-600/5 blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16">
+
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
 
           <div className="lg:col-span-2">
-            <Link href="/en" className="inline-block shrink-0">
-              <Image
-                src="/yatralogo.png"
-                alt="Yatra"
-                width={100}
-                height={40}
-                priority
-                className="h-auto w-20 rounded-full sm:w-24 md:w-22 lg:w-22 "
-              />
+            <Link
+              href="/"
+              aria-label="ICT Club of Kalika home"
+              className="group inline-flex items-center gap-4"
+            >
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full  bg-white/5 transition-all duration-300 ">
+                <Image
+                  src="/logo.avif"
+                  alt="ICT Club of Kalika logo"
+                  fill
+                  sizes="64px"
+                  className="object-contain p-1"
+                />
+              </div>
+
+              <div>
+                <h2 className="text-lg font-extrabold tracking-wide text-[#05F2DB]">
+                  ICT Club of  Kalika
+                </h2>
+              </div>
             </Link>
-            <p className="mt-5 max-w-md text-sm leading-7 text-slate-400">
-              Your journey, your way. Yatra connects passengers with
-              trusted transport providers for rides, deliveries, tours,
-              and rentals across Nepal.
+
+            <p className="mt-6 max-w-md text-sm leading-7 text-slate-400">
+              Innovating the future through technology. We empower students
+              to explore ICT, develop practical skills, collaborate on ideas,
+              and create a meaningful impact through innovation.
             </p>
 
+            <div id="social-media" className="flex flex-row w-[1/4] items-center justify-start mt-10 gap-6 md:gap-8">
+
+              <a
+                href="https://www.instagram.com/ictkalika/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our Instagram page"
+                className="flex h-11 w-11 items-center justify-center rounded-full transition-all duration-300  "
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  className="h-6 w-6"
+                  aria-hidden="true"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                </svg>
+              </a>
+
+              <a
+                href="https://github.com/ictkalika"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our GitHub page"
+                className="flex h-11 w-11 items-center justify-center rounded-full transition-all duration-300 "
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-6 w-6"
+                  aria-hidden="true"
+                >
+                  <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.55.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.31-3.76-1.31-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15.99 1.7 2.6 1.21 3.23.92.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.51 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.06 1.14a10.65 10.65 0 0 1 5.57 0c2.12-1.44 3.06-1.14 3.06-1.14.61 1.54.23 2.68.11 2.96.72.78 1.15 1.77 1.15 2.99 0 4.28-2.62 5.22-5.11 5.5.4.35.75 1.02.75 2.06v3.08c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z" />
+                </svg>
+              </a>
+
+              <a
+                href="https://www.facebook.com/ictkalika"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our Facebook page"
+                className="flex h-11 w-11 items-center justify-center rounded-full transition-all duration-300 "
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-6 w-6"
+                  aria-hidden="true"
+                >
+                  <path d="M13.4 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.3V13h2.8v8h3.3Z" />
+                </svg>
+              </a>
+            </div>
+
           </div>
 
 
           <div>
-            <h3 className="mb-5 text-sm font-semibold text-white"> 
-              <Link href="/contact" className="transition hover:text-[#ee8d39]">
-               Company  Contact
-              </Link>
+            <h3 className="mb-6 text-sm font-semibold uppercase  text-white">
+              Explore
             </h3>
 
-            <div className="flex flex-col gap-3 text-sm text-slate-400">
-              <Link href="/en" className="transition hover:text-[#ee8d39]"> Home </Link>
-              <Link  href="/en/login"  className="transition hover:text-[#ee8d39]"> Login </Link>
-              <Link  href="/en/register" className="transition hover:text-[#ee8d39]"> Register </Link>
-            </div>
+            <ul className="flex flex-col gap-4 text-sm text-slate-400">
+              {[
+                { label: "Home", href: "/" },
+                { label: "About Us", href: "/about" },
+                { label: "Events", href: "/events" },
+                { label: "Teams", href: "/team" },
+                { label: "Partners", href: "/partners" },
+              ].map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="group inline-flex items-center gap-1 transition-colors duration-200 hover:text-[#05F2DB]"
+                  >
+                    {item.label}
+                    <ArrowUpRight
+                      size={13}
+                      className="opacity-0 transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
+                    />
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-
 
           <div>
-            <h3 className="mb-5 text-sm font-semibold  text-white">  Services </h3>
-            <div className="flex flex-col gap-3 text-sm text-slate-400">
-              <Link href="/register" className="transition hover:text-[#ee8d39]">
-                Book a Ride
-              </Link>
+            <h3 className="mb-6 text-sm font-semibold uppercase  text-white">
+              Get in Touch
+            </h3>
 
-              <Link href="/transporter/register" className="transition hover:text-[#ee8d39]">
-                Become a Rider
-              </Link>
+            <div className="flex flex-col gap-5 text-sm text-slate-400">
 
-              <Link href="/transporter/register" className="transition hover:text-[#ee8d39]">
-                Vehicle Rental
-              </Link>
+              <div className="flex items-start gap-3">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ">
+                  <MapPin size={17} className="text-[#05F2DB]" />
+                </div>
+                <div className="pt-1">
+                  <p className="text-xs text-slate-500">Location</p>
+                  <p className="mt-1 text-slate-300">Butwal, Nepal</p>
+                </div>
+              </div>
+
+              <a
+                href="mailto:ictkalika82@gmail.com"
+                className="group flex items-start gap-3 transition-colors hover:text-[#05F2DB]"
+              >
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ">
+                  <Mail size={17} className="text-[#05F2DB]" />
+                </div>
+                <div className="min-w-0 pt-1">
+                  <p className="text-xs text-slate-500">Email</p>
+                  <p className="mt-1 break-all">ictkalika82@gmail.com</p>
+                </div>
+              </a>
+
+              <a
+                href="tel:+9779748703502"
+                className="group flex items-start gap-3 transition-colors hover:text-[#05F2DB]"
+              >
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ">
+                  <Phone size={17} className="text-[#05F2DB]" />
+                </div>
+                <div className="pt-1">
+                  <p className="text-xs text-slate-500">Phone</p>
+                  <p className="mt-1 text-slate-300">+977 9748703502</p>
+                </div>
+              </a>
+
             </div>
           </div>
         </div>
 
 
-        <div className="mt-14 grid gap-4 pt-8 md:grid-cols-3">
+        <div className="mt-8 border-t border-white/10 pt-7">
+          <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
 
-          <div className="flex items-center gap-3 text-sm text-slate-400">
-            <div className="flex h-9 w-9 items-center justify-center">
-              <MapPin size={17} className="text-[#ee8d39]" />
-            </div>
-
-            <span>Butwal, Nepal</span>
-          </div>
-
-          <div className="flex items-center gap-3 text-sm text-slate-400">
-            <div className="flex h-9 w-9 items-center justify-center">
-              <Mail size={17} className="text-[#ee8d39]" />
-            </div>
-
-            <span>support@yatra.com</span>
-          </div>
-
-          <div className="flex items-center gap-3 text-sm text-slate-400">
-            <div className="flex h-9 w-9 items-center justify-center">
-              <Phone size={17} className="text-[#ee8d39]" />
-            </div>
-
-            <span>+977 9867782172</span>
+            <p className="text-xs leading-6 text-slate-500 sm:text-sm">
+              © 2026{" "}
+              <span className=" text-slate-300">
+                ICT Club of Kalika.
+              </span>{" "}
+              All rights reserved.
+            </p>
           </div>
         </div>
-      </div>
 
-      <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 py-6 text-sm text-slate-500 md:flex-row md:px-8">
-          <p>
-            © {new Date().getFullYear()} Yatra. All rights reserved.
-          </p>
-
-          <div className="flex gap-6">
-            <Link
-              href="#"
-              className="transition hover:text-slate-300"
-            >
-              Privacy Policy
-            </Link>
-
-            <Link
-              href="#"
-              className="transition hover:text-slate-300"
-            >
-              Terms of Service
-            </Link>
-          </div>
-        </div>
       </div>
     </footer>
   );
