@@ -6,6 +6,7 @@ type Socials = {
     youtube?: string;
     email?: string;
     x?: string;
+    website?:string;
 };
 
 type Member = {
@@ -45,6 +46,9 @@ const members: MemberCategory[] = [
                 role: "Vice President",
                 image: "/sanjog-pandey.avif",
                 socials: {
+                    linkedin: "https://linkedin.com/in/sangogpandey",
+                    github: "https://github.com/sangogpandey",
+                    instagram: "https://instagram.com/sangogpandey"
                 },
                 bio: "Coordinating events and fostering collaboration among members.",
                 skills: ["Event Management", "UI/UX Design", "Team Building"]
@@ -55,8 +59,8 @@ const members: MemberCategory[] = [
                 image: "/ramit.avif",
                 socials: {
                     linkedin: "https://www.linkedin.com/in/ramitcornorceo/",
-                    facebook: "https://facebook.com",
-                    instagram: "https://instagram.com",
+                    github: "https://github.com/ramatneupane",
+                    website: "https://ramatneupane.dev"
                 },
                 bio: "Documentation for the club.",
                 skills: ["Documentation", "Communication", "Organization"]
@@ -66,7 +70,9 @@ const members: MemberCategory[] = [
                 role: "Treasurer",
                 image: "/shasank-shrestha.avif",
                 socials: {
-                    email: ""
+                    linkedin: "https://linkedin.com/in/shasankshrestha",
+                    email: "shasankshrestha59@gmail.com",
+                    github: "https://github.com/shasank00"
                 },
                 bio: "Documentation for the club.",
                 skills: ["Documentation", "Communication", "Organization"]
@@ -77,7 +83,7 @@ const members: MemberCategory[] = [
                 image: "/bishnu-adhikari.avif",
                 socials: {
                     linkedin: "https://www.linkedin.com/in/bishnu-adhikari-8bb6242a5/",
-                    email: ""
+                    email: "yamadeath0@gmail.com"
 
                 },
                 bio: "Contributing to strategic planning and club operations",
@@ -92,6 +98,8 @@ const members: MemberCategory[] = [
                     linkedin: "https://www.linkedin.com/in/nayan135/",
                     x: "https://x.com/nooneknows135",
                     instagram: "https://www.instagram.com/naayan135",
+                    email: "nayan@ypstem.org",
+                    website: "https://nayan135.com.np"
                 },
                 bio: "Overseeing technical projects and infrastructure.",
                 skills: ["System Administration", "DevOps", "Technical Leadership"]
@@ -103,7 +111,7 @@ const members: MemberCategory[] = [
                 socials: {
                     linkedin: "https://www.linkedin.com/in/naranbhusal02/",
                     x: "https://x.com/naranbhusal02",
-                    email: ""
+                    email: "narayan@ypstem.org"
 
                 },
                 bio: "Supporting technical initiatives and member development.",
@@ -114,7 +122,8 @@ const members: MemberCategory[] = [
                 role: "Media",
                 image: "/NISHAN REGMI.avif",
                 socials: {
-                    email: ""
+                    linkedin: "https://linkedin.com/in/nishanregmi",
+                    email: "nishanregmi@gmail.com"
                 },
                 bio: "Managing club media presence and communications.",
                 skills: ["Content Creation", "Social Media", "Photography"]
@@ -125,7 +134,7 @@ const members: MemberCategory[] = [
                 image: "/sweta-lamsal.avif",
                 socials: {
                     facebook: "https://www.facebook.com/swe.ta.119000",
-                    email: ""
+                    email: "swetadonna@gmail.com"
                 },
                 bio: "Managing club media presence and communications.",
                 skills: ["Communication", "Organization", "Event Planning"]
@@ -135,7 +144,8 @@ const members: MemberCategory[] = [
                 role: "CS Representative",
                 image: "/princep.avif",
                 socials: {
-                    email: ""
+                    instagram: "https://www.instagram.com/princepkhanal69",
+                    email: "khanalprincep625@gmai.com"
                 },
                 bio: "Representing the Computer Science department and facilitating member engagement.",
                 skills: ["Representation", "Coordination", "Engagement"]
@@ -157,7 +167,7 @@ const members: MemberCategory[] = [
                 image: "/aaditya-khanal.avif",
                 socials: {
                     facebook: "https://www.facebook.com/aaditya.khanal.7999",
-                    email: ""
+                    email: "khanalaaditya27@gmail.com"
                 },
                 bio: "Engaging team with various events throughout the club.",
                 skills: ["Leadership", "Communication", "Management"]
@@ -167,8 +177,8 @@ const members: MemberCategory[] = [
                 role: "Leader of 10",
                 image: "/himanshu-sapkota.avif",
                 socials: {
-                    linkedin: "https://www.linkedin.com/in/himanshusapkota/",
-                    email: ""
+                    linkedin: "https://www.linkedin.com/in/himanshu-sapkota-3b5488339?originalSubdomain=np",
+                    email: "himanshuspkt@gmail.com"
                 },
                 bio: "Engaging team with various events throughout the club..",
                 skills: ["Leadership", "Communication", "Management"]
@@ -179,7 +189,7 @@ const members: MemberCategory[] = [
                 image: "/samriddha-poudel.avif",
                 socials: {
                     facebook: "https://www.facebook.com/samriddha.poudel.869291",
-                    email: ""
+                    email: "poudelsamriddha46@gmail.com"
                 },
                 bio: "Engaging team with various events throughout the club..",
                 skills: ["Leadership", "Communication", "Management"]
@@ -189,7 +199,8 @@ const members: MemberCategory[] = [
                 role: "Executive Member",
                 image: "/prazwal-roka.avif",
                 socials: {
-                    email: ""
+                    linkedin: "https://linkedin.com/in/prazwalroka",
+                    email: "prazwalroka@gmail.com"
                 },
                 bio: "Contributing to strategic planning and club operations",
                 skills: ["Strategy", "Operations", "Engagement"]
@@ -200,7 +211,7 @@ const members: MemberCategory[] = [
                 image: "/Amit-Pandey.avif",
                 socials: {
                     facebook: "https://www.facebook.com/amit.pandey.922255",
-                    email: ""
+                    email: "pandeyamit2064@gmail.com"
                 },
                 bio: "Contributing to strategic planning and club operations",
                 skills: ["Strategy", "Operations", "Engagement"]
@@ -210,7 +221,8 @@ const members: MemberCategory[] = [
                 role: "Executive Member",
                 image: "/girija-karki.avif",
                 socials: {
-                    email: ""
+                    instagram: "https://www.instagram.com/_sanjokkarki?igsh=MXhmbmQxZno3eWFjaA==",
+                    email: "karkisanjok06@gmail.com"
                 },
                 bio: "Contributing to strategic planning and club operations",
                 skills: ["Strategy", "Operations", "Engagement"]
@@ -220,7 +232,8 @@ const members: MemberCategory[] = [
                 role: "Executive Member",
                 image: "/sumit-kawar-magar.avif",
                 socials: {
-                    email: ""
+                    instagram: "https://www.instagram.com/aridorikichi/profilecard/?igsh=cWtwbjBreGNhZHE0",
+                    email: "aridorikichi@gmail.com"
                 },
                 bio: "Contributing to strategic planning and club operations",
                 skills: ["Strategy", "Operations", "Engagement"]
@@ -230,8 +243,8 @@ const members: MemberCategory[] = [
                 role: "Executive Member",
                 image: "/anshu-aryal.avif",
                 socials: {
-                    instagram: "https://www.instagram.com/anshuaryal15",
-                    email: ""
+                    instagram: "https://www.instagram.com/anshuaryal15?igsh=MWgwZnpkNnR3dWF1cw==",
+                    email: "aryalanshu64@gmail.com"
                 },
                 bio: "Documentation for the club.",
                 skills: ["Strategy", "Operations", "Engagement"]
@@ -241,7 +254,8 @@ const members: MemberCategory[] = [
                 role: "Executive Member",
                 image: "/nischal-darnal.avif",
                 socials: {
-                    email: ""
+                    facebook: "https://www.facebook.com/share/1LeiXMA3Zb/",
+                    email: "nischaldarnal69@gmail.com"
                 },
                 bio: "Documentation for the club.",
                 skills: ["Strategy", "Operations", "Engagement"]
@@ -251,7 +265,8 @@ const members: MemberCategory[] = [
                 role: "Executive Member",
                 image: "/raunak-acharya.avif",
                 socials: {
-                    email: ""
+                    facebook: "https://www.facebook.com/share/18xxwiHzee/",
+                    email: "raunakacharya0@gmail.com"
                 },
                 bio: "Documentation for the club.",
                 skills: ["Strategy", "Operations", "Engagement"]
@@ -262,7 +277,7 @@ const members: MemberCategory[] = [
                 image: "/aman-pokharel.avif",
                 socials: {
                     linkedin: "https://www.linkedin.com/in/aman-pokharel-59b146287/",
-                    email: ""
+                    email: "amanpokharel69@gmail.com"
                 },
                 bio: "Documentation for the club.",
                 skills: ["Strategy", "Operations", "Engagement"]
@@ -272,8 +287,8 @@ const members: MemberCategory[] = [
                 role: "Executive Member",
                 image: "/susant-gautam.avif",
                 socials: {
-                    linkedin: "https://www.linkedin.com/in/sushant-gautam-705144314/",
-                    email: ""
+                    linkedin: "https://www.linkedin.com/in/sushant-gautam-705144314?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                    email: "sushantgautam854@gmail.com"
                 },
                 bio: "Documentation for the club.",
                 skills: ["Strategy", "Operations", "Engagement"]
@@ -306,6 +321,7 @@ const members: MemberCategory[] = [
                 image: "/anushka-pokhrel.avif",
                 socials: {
                     facebook: "https://www.facebook.com/anushka.pokhrel.871838/",
+                    email: "shovasasa0@gmail.com"
                 },
                 bio: "Contributing to strategic planning and club operations",
                 skills: ["Strategy", "Operations", "Engagement"]
@@ -314,22 +330,22 @@ const members: MemberCategory[] = [
     },
     {
         category: "advisors",
-        tag:"The experienced mentors and guiding minds who support our community with their knowledge, insights, and direction.",
+        tag: "The experienced mentors and guiding minds who support our community with their knowledge, insights, and direction.",
         members: [
             {
                 "name": "Dinesh Thapa",
                 "role": "Advisor",
-                "image":"/dinesh-thapa.avif"
+                "image": "/dinesh-thapa.avif"
             },
             {
                 "name": "Arbind Kumar Dubey",
                 "role": "Advisor",
-                "image":"/arbind-dubey.avif"
+                "image": "/arbind-dubey.avif"
             },
             {
                 "name": "Vishnu Neupane",
                 "role": "Advisor",
-                "image":"/vishnu-neupane.avif"
+                "image": "/vishnu-neupane.avif"
             }
         ]
     },
@@ -338,7 +354,7 @@ const members: MemberCategory[] = [
         members: [{
             "name": "Hemraj Shahi",
             "role": "Presidential Advisor",
-            "image":"/hemraj-shahi.avif"
+            "image": "/hemraj-shahi.avif"
         }]
     },
     {

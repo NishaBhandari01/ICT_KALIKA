@@ -1,25 +1,67 @@
-"use client"
+"use client";
 
 import React, { useState } from 'react';
-import { Mail, MapPin, ChevronUp } from 'lucide-react';
+import { Mail, MapPin, ChevronUp, Loader2, ArrowBigLeft, ArrowLeft, ArrowRight } from 'lucide-react';
+import { toast } from 'react-hot-toast';
+
+interface FormDataState {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+}
 
 export default function ContactSection() {
-    const [formData, setFormData] = useState({
+    const [loading, setLoading] = useState<boolean>(false);
+    const [formData, setFormData] = useState<FormDataState>({
         name: '',
         email: '',
         phone: '',
         message: '',
     });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
         const { name, value } = e.target;
         if (name === 'message' && value.length > 1000) return;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
+        setLoading(true);
+        console.log(
+            "i am running"
+        )
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                toast.error(data.message || "Failed to send message. Please try again.");
+                return;
+            }
+
+            toast.success("Message sent successfully!");
+
+            setFormData({
+                name: "",
+                email: "",
+                phone: "",
+                message: "",
+            });
+        } catch (error) {
+            console.error(error);
+            toast.error("Unable to send message.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     const scrollToTop = () => {
@@ -27,19 +69,19 @@ export default function ContactSection() {
     };
 
     return (
-        <div className='bg-[#0B1120]'>
-            <section className="relative  text-slate-200 py-16 px-6 md:px-16 min-h-screen flex items-center justify-center">
+        <div className="bg-[#0B1120]">
+            <section className="relative text-slate-200 py-16 px-6 md:px-16 min-h-screen flex items-center justify-center">
                 <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
                     <div className="space-y-6">
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-[#00F0FF] to-[#2563EB] bg-clip-text text-transparent">
-                            Let's connect
+                            Let&apos;s connect
                         </h2>
                         <p className="text-slate-400 text-base md:text-lg max-w-md leading-relaxed">
-                            Have an exciting idea or just want to say hello? We're here to collaborate and create something amazing together.
+                            Have an exciting idea or just want to say hello? We&apos;re here to collaborate and create something amazing together.
                         </p>
 
-                        <p>Choose your preferred way to reach us</p>
+                        <p className="text-sm text-slate-400 font-medium">Choose your preferred way to reach us</p>
 
                         <div className="space-y-4 pt-2">
                             <div className="flex items-center space-x-4">
@@ -47,15 +89,15 @@ export default function ContactSection() {
                                     <Mail className="w-5 h-5 text-slate-400" />
                                 </div>
                                 <a
-                                    href="mailto:ictkalika@gmail.com"
-                                    className="inline-flex items-center gap-2 rounded-lg py-3 text-white "
+                                    href="mailto:ictkalika82@gmail.com"
+                                    className="inline-flex items-center gap-2 rounded-lg py-3 text-white hover:text-[#00F0FF] transition-colors"
                                 >
                                     ictkalika82@gmail.com
                                 </a>
                             </div>
 
                             <div className="flex items-center space-x-4">
-                                <div className="w-10 h-10 rounded-lg bg-[#162032] flex items-center justify-center text-slate-300 ">
+                                <div className="w-10 h-10 rounded-lg bg-[#162032] flex items-center justify-center text-slate-300">
                                     <MapPin className="w-5 h-5 text-slate-400" />
                                 </div>
                                 <span className="text-slate-300 text-sm md:text-base">Butwal, Nepal</span>
@@ -63,10 +105,8 @@ export default function ContactSection() {
                         </div>
                     </div>
 
-
-                    <div className="bg-[#121a2c] border border-slate-800/80 rounded-2xl p-6 md:p-8 shadow-2xl relative">
+                    <div className="bg-[#121a2c]  rounded-2xl p-6 md:p-8 shadow-2xl relative">
                         <form onSubmit={handleSubmit} className="space-y-5">
-
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-1.5">
@@ -80,7 +120,7 @@ export default function ContactSection() {
                                         placeholder="Your name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className="w-full bg-[#182237] border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#00F0FF] transition-colors"
+                                        className="w-full bg-[#182237] border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#35787c] transition-colors"
                                     />
                                 </div>
 
@@ -95,11 +135,10 @@ export default function ContactSection() {
                                         placeholder="you@example.com"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className="w-full bg-[#182237] border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#00F0FF] transition-colors"
+                                        className="w-full bg-[#182237] border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#35787c] transition-colors"
                                     />
                                 </div>
                             </div>
-
 
                             <div className="space-y-1.5">
                                 <label className="block text-xs font-semibold text-slate-300">
@@ -111,10 +150,9 @@ export default function ContactSection() {
                                     placeholder="+977 98XXXXXXXX"
                                     value={formData.phone}
                                     onChange={handleChange}
-                                    className="w-full bg-[#182237] border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#00F0FF] transition-colors"
+                                    className="w-full bg-[#182237] border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#35787c] transition-colors"
                                 />
                             </div>
-
 
                             <div className="space-y-1.5 relative">
                                 <label className="block text-xs font-semibold text-slate-300">
@@ -127,25 +165,34 @@ export default function ContactSection() {
                                     placeholder="Your message here..."
                                     value={formData.message}
                                     onChange={handleChange}
-                                    className="w-full bg-[#182237] border border-slate-800 rounded-lg p-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#00F0FF] transition-colors resize-none"
+                                    className="w-full bg-[#182237] border border-slate-800 rounded-lg p-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#35787c] transition-colors resize-none"
                                 />
                                 <span className="absolute right-3 bottom-3 text-[11px] text-slate-500 pointer-events-none">
                                     {formData.message.length}/1000
                                 </span>
                             </div>
 
-
                             <button
                                 type="submit"
-                                className="w-full py-3 px-6 rounded-lg font-semibold text-white bg-gradient-to-r from-[#2563EB] to-[#319097] hover:opacity-95 transition-opacity shadow-lg shadow-blue-500/10 cursor-pointer"
+                                disabled={loading}
+                                className="w-full py-3 px-6 rounded-lg font-semibold text-white bg-[#319097] hover:opacity-95 transition-opacity shadow-lg shadow-blue-500/10 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             >
-                                Send Message
+                                {loading ? (
+                                    <>
+                                        <Loader2 className="w-4 h-4 animate-spin" />
+                                        <span>Sending...</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <span>Send Message</span>
+                                        <ArrowRight className="w-4 h-4 text-black/90 " />
+                                    </>
+                                )}
                             </button>
                         </form>
                     </div>
 
                 </div>
-
 
                 <button
                     onClick={scrollToTop}
@@ -156,7 +203,7 @@ export default function ContactSection() {
                 </button>
             </section>
 
-            <section className=" px-6 py-16 text-white">
+            <section className="px-6 py-16 text-white">
                 <div className="mx-auto max-w-7xl">
                     <div className="mb-8 text-center">
                         <h2 className="text-3xl font-bold md:text-4xl">
@@ -196,7 +243,7 @@ export default function ContactSection() {
                                 href="https://www.google.com/maps/search/?api=1&query=Kalika+Manavgyan+Secondary+School+Butwal"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-[#4ea4cb] px-5 py-3 font-medium transition hover:bg-[#417993] "
+                                className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-[#4ea4cb] px-5 py-3 font-medium transition hover:bg-[#417993]"
                             >
                                 Open in Google Maps
                                 <span aria-hidden="true">↗</span>
@@ -206,6 +253,5 @@ export default function ContactSection() {
                 </div>
             </section>
         </div>
-
     );
 }

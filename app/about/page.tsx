@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import Image from 'next/image'
 import {
@@ -7,14 +9,39 @@ import {
     Calendar
 } from 'lucide-react';
 import Link from 'next/link';
+import { motion } from "framer-motion";
+
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.1,
+        },
+    },
+};
+
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1] as const,
+        },
+    },
+}
 
 interface FoundationCard {
     id: string;
     title: string;
     icon: React.ReactNode;
-    tagline: string;
     description: string;
-    accentGradient: string;
+
 }
 
 interface ActivityItem {
@@ -136,24 +163,35 @@ const page = () => {
                     />
                 </div>
 
-                <div className="relative z-10 mx-auto max-w-4xl text-center">
-                    <h1 className="bg-gradient-to-r from-[#05F2DB] to-[#2563EB] bg-clip-text text-4xl font-extrabold text-transparent sm:text-6xl">
+                <motion.div
+                    className="relative z-10 mx-auto max-w-4xl text-center"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <motion.h1
+                        variants={itemVariants}
+                        className="bg-gradient-to-r from-[#05F2DB] to-[#2563EB] bg-clip-text text-4xl font-extrabold text-transparent sm:text-6xl"
+                    >
                         ICT Club of Kalika
-                    </h1>
+                    </motion.h1>
 
-                    <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+                    <motion.p
+                        variants={itemVariants}
+                        className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg"
+                    >
                         Innovating the future through technology and collaboration
-                    </p>
-                </div>
+                    </motion.p>
+                </motion.div>
             </section>
 
             <section className="relative overflow-hidden  px-6 py-20 text-slate-200 sm:py-24 md:px-16">
                 <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
                     <div>
 
-                        <h2 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+                        <h2 className="text-2xl font-extrabold leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl">
                             Why We{" "}
-                            <span className="bg-gradient-to-r from-[#05F2DB] to-[#2563EB] bg-clip-text text-transparent">
+                            <span className="bg-[#05F2DB] bg-clip-text text-transparent">
                                 Exist?
                             </span>
                         </h2>
@@ -247,46 +285,43 @@ const page = () => {
             <section className="relative  text-slate-200 py-24 px-6 md:px-16 overflow-hidden">
                 <div className="max-w-7xl mx-auto relative z-10">
                     <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-                        <div className="inline-flex items-center gap-2 px-3 py-1  text-xs ">
+                        <div className="inline-flex items-center gap-2 px-3  text-xs ">
                             <span className='font-semibold text-2xl text-gray-600'>Core Pillars</span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-                            Our <span className="bg-gradient-to-r from-[#00F0FF] to-[#2563EB] bg-clip-text text-transparent">Foundation</span>
+                        <h2 className="text-4xl md:text-4xl font-extrabold tracking-tight text-white">
+                            Our <span className="bg-[#05F2DB] bg-clip-text text-transparent">Foundation</span>
                         </h2>
                         <p className="text-slate-400 text-base md:text-lg leading-relaxed">
                             The principles that guide our journey and shape our impact as a community.
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {foundationData.map((item) => (
-                            <div key={item.id}
-                                className="group relative rounded-2xl bg-[#121a2c]/80 border border-slate-800/80 p-8 backdrop-blur-sm transition-all duration-300  flex flex-col justify-between overflow-hidden"
-                            >
+                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {foundationData.map((item) => (
+                <div 
+                    key={item.id}
+                    className="group relative rounded-2xl bg-[#121a2c]/80 border border-slate-800/80 p-8 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                >
+              
+                    <div  className={`absolute top-0 left-0 h-1 bg-[#aaa] opacity-90 group-hover:opacity-100 transition-opacity duration-300 animate-fill-bar`}  />
 
-                                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.accentGradient} opacity-70 group-hover:opacity-100 transition-opacity duration-300`} />
+                    <div className='relative'>
+                        <div className="w-full h-34 rounded-xl bg-[#182237] relative left-1/3 p-4 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 group-hover:border-[#00F0FF]/50 transition-all duration-300">
+                            {item.icon}
+                        </div>
 
-                                <div className='relative'>
-                                    <div className="w-full h-34 rounded-xl bg-[#182237] relative left-1/3 p-4 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 group-hover:border-[#00F0FF]/50 transition-all duration-300">
-                                        {item.icon}
-                                    </div>
+        
+                        <h3 className="text-2xl font-bold text-white mt-1 mb-4">
+                            {item.title}
+                        </h3>
 
-                                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                                        {item.tagline}
-                                    </span>
-
-                                    <h3 className="text-2xl font-bold text-white mt-1 mb-4">
-                                        {item.title}
-                                    </h3>
-
-                                    <p className="text-slate-400 text-sm md:text-base leading-relaxed relative z-10">
-                                        {item.description}
-                                    </p>
-                                </div>
-
-                            </div>
-                        ))}
+                        <p className="text-slate-400 text-sm md:text-base leading-relaxed relative z-10">
+                            {item.description}
+                        </p>
                     </div>
+                </div>
+            ))}
+        </div>
                 </div>
             </section>
 
