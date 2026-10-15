@@ -39,7 +39,7 @@ export async function sendContactEmail(data: Data) {
                           <td>
                             <div style="margin-bottom: 14px;">
                               <img 
-                                src="/logo.avif" 
+                                src="https://ictkalika.tech/logo.avif" 
                                 alt="ICT Club of Kalika Logo" 
                                 width="44" 
                                 height="44" 
