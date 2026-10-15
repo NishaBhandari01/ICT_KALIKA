@@ -49,6 +49,23 @@ const Hero = () => {
                     </a>
 
                     <a
+                        href="https://www.linkedin.com/company/ictkalika/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit our LinkedIn page"
+                        className="flex h-11 w-11 items-center justify-center rounded-full transition-all duration-300"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            className="h-6 w-6"
+                            aria-hidden="true"
+                        >
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
+                        </svg>
+                    </a>
+
+                    <a
                         href="https://www.facebook.com/ictkalika"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -69,23 +86,44 @@ const Hero = () => {
                 <div className="flex flex-col items-center justify-center">
 
                     <div className="relative flex h-80 w-80 items-center justify-center">
-                        <div className="absolute h-72 w-72 animate-[spin_12s_linear_infinite] rounded-full border border-[#05F2DB]/30">
+                        <div className="absolute h-72 w-72 animate-[spin_12s_linear_infinite] rounded-full border border-[#05F2DB]/30 rotate-[-25deg] ">
 
-                            <div className="absolute -top-5 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-[#05F2DB]/40 bg-[#0B1120] text-xl shadow-[0_0_15px_#05F2DB40]">
-                                💻
+                            <div className="absolute -top-5 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border border-[#05F2DB]/40 bg-[#0B1120] shadow-[0_0_15px_#05F2DB40]">
+                                <Image
+                                    src="/cpu.png"
+                                    alt="CPU"
+                                    width={24}
+                                    height={24}
+                                    className="h-6 w-6 object-contain"
+                                />
                             </div>
 
-                            <div className="absolute right-0 top-1/2 flex h-10 w-10 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full border border-[#05F2DB]/40 bg-[#0B1120] text-xl shadow-[0_0_15px_#05F2DB40]">
+            
+                            <div className="absolute right-0 top-1/2 flex h-10 w-10 translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#05F2DB]/40 bg-[#0B1120] text-xl shadow-[0_0_15px_#05F2DB40]">
                                 {'</>'}
                             </div>
 
-                            <div className="absolute bottom-0 left-1/2 flex h-10 w-10 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full border border-[#05F2DB]/40 bg-[#0B1120] text-xl shadow-[0_0_15px_#05F2DB40]">
-                                🚀
+                            <div className="absolute bottom-0 left-1/2 flex h-10 w-10 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full border border-[#05F2DB]/40 bg-[#0B1120] shadow-[0_0_15px_#05F2DB40]">
+                                <Image
+                                    src="/rocket.png"
+                                    alt="Rocket"
+                                    width={24}
+                                    height={24}
+                                    className="h-6 w-6 object-contain"
+                                />
                             </div>
 
-                            <div className="absolute left-0 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#05F2DB]/40 bg-[#0B1120] text-xl shadow-[0_0_15px_#05F2DB40]">
-                                ⚡
+                  
+                            <div className="absolute left-0 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#05F2DB]/40 bg-[#0B1120] shadow-[0_0_15px_#05F2DB40]">
+                                <Image
+                                    src="/innovation.png"
+                                    alt="Innovation"
+                                    width={24}
+                                    height={24}
+                                    className="h-6 w-6 object-contain"
+                                />
                             </div>
+
                         </div>
 
                         <div className="absolute h-56 w-56 animate-[spin_8s_linear_infinite_reverse] rounded-full border border-dashed border-[#05F2DB]/20">

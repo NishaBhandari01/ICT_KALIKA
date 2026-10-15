@@ -1,14 +1,109 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import Image from 'next/image'
+import {
+    Award, Eye, Target,
+    Users,
+    ArrowRight,
+    Calendar
+} from 'lucide-react';
+import Link from 'next/link';
+
+interface FoundationCard {
+    id: string;
+    title: string;
+    icon: React.ReactNode;
+    tagline: string;
+    description: string;
+    accentGradient: string;
+}
+
+interface ActivityItem {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+    badge: string;
+}
+
+const foundationData: FoundationCard[] = [
+    {
+        id: 'mission',
+        title: 'Our Mission',
+        tagline: 'Empowering Through Tech',
+        icon: <Target className="w-14 h-14 text-[#00F0FF]" />,
+        description:
+            'To foster innovation, inspire creativity, and create a lasting impact through technology. We provide a platform for students to explore, learn, and excel in various fields of ICT while building a strong community of tech enthusiasts.',
+        accentGradient: 'from-[#00F0FF] to-[#059669]',
+    },
+    {
+        id: 'vision',
+        title: 'Our Vision',
+        tagline: 'Leading Digital Future',
+        icon: <Eye className="w-14 h-14 text-[#3B82F6]" />,
+        description: 'To be the leading technology club that empowers students to become innovative leaders in the digital world. We envision a future where our members contribute significantly to Nepal’s technological advancement and global tech community.',
+        accentGradient: 'from-[#2563EB] to-[#00F0FF]',
+    },
+    {
+        id: 'values',
+        title: 'Our Values',
+        tagline: 'Core Principles',
+        icon: <Award className="w-14 h-14 text-[#8B5CF6]" />,
+        description:
+            'Innovation, collaboration, excellence, and inclusivity. We believe in continuous learning, ethical technology use, and creating opportunities for all students regardless of their background or current skill level.',
+        accentGradient: 'from-[#8B5CF6] to-[#2563EB]',
+    },
+];
+
+export const activities: ActivityItem[] = [
+    {
+        id: 'workshops',
+        title: 'Workshops & Training',
+        description: 'Regular hands-on sessions on modern programming languages, web development, AI/ML, and emerging software technologies.',
+        image: "/workshop.png",
+        badge: 'Skill Building',
+    },
+    {
+        id: 'competitions',
+        title: 'Competitions & Hackathons',
+        description: 'Organizing and participating in competitive coding contests, intense hackathons, and regional tech challenges.',
+        image: "/competition.png",
+        badge: 'Competitive',
+    },
+    {
+        id: 'projects',
+        title: 'Project Development',
+        description: 'Collaborative real-world projects that solve actual problems while building production-ready engineering skills.',
+        image: "/project_development.png",
+        badge: 'Hands-on',
+    },
+    {
+        id: 'industry',
+        title: 'Industry Connections',
+        description: 'Exclusive networking events with tech professionals, alumni interactions, and guest lectures from industry leaders.',
+        image: "/users.png",
+        badge: 'Networking',
+    },
+    {
+        id: 'research',
+        title: 'Research & Innovation',
+        description: 'Supporting student-led research initiatives, experimental prototyping, and fostering an inventive engineering mindset.',
+        image: "/research.png",
+        badge: 'R&D',
+    },
+    {
+        id: 'community',
+        title: 'Community Outreach',
+        description: 'Tech awareness bootcamps, open-source workshops, and digital literacy initiatives empowering the local community.',
+        image: "/community.png",
+        badge: 'Impact',
+    },
+];
 
 const page = () => {
     return (
-        <div>
-            <Navbar />
+        <div className='bg-[#0B1120]'>
 
-            <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0d1322] px-6 py-16 text-slate-200 md:px-16">
+            <section className="relative flex min-h-screen items-center justify-center overflow-hidden  px-6 py-16 text-slate-200 md:px-16">
                 <Image
                     src="/kmss-ground.jpg"
                     alt="Technology background"
@@ -52,10 +147,7 @@ const page = () => {
                 </div>
             </section>
 
-            <section className="relative overflow-hidden bg-[#0d1322] px-6 py-20 text-slate-200 sm:py-24 md:px-16">
-                <div className="pointer-events-none absolute -left-32 top-10 h-80 w-80 rounded-full bg-[#05F2DB]/5 blur-[100px]" />
-                <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-blue-600/10 blur-[100px]" />
-
+            <section className="relative overflow-hidden  px-6 py-20 text-slate-200 sm:py-24 md:px-16">
                 <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
                     <div>
 
@@ -72,10 +164,10 @@ const page = () => {
                             into knowledge, ideas into innovation, and learners into future
                             technology leaders.
                         </p>
-             
+
 
                         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                       
+
                             <div className="rounded-xl  bg-white/[0.03] p-5 transition-all duration-200 flex flex-col justify-center items-center  hover:bg-blue-500/[0.04]">
                                 <div className="mb-5 flex h-24 w-24 items-center justify-center">
                                     <Image
@@ -151,7 +243,149 @@ const page = () => {
                     </div>
                 </div>
             </section>
-            <Footer />
+
+            <section className="relative  text-slate-200 py-24 px-6 md:px-16 overflow-hidden">
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                        <div className="inline-flex items-center gap-2 px-3 py-1  text-xs ">
+                            <span className='font-semibold text-2xl text-gray-600'>Core Pillars</span>
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                            Our <span className="bg-gradient-to-r from-[#00F0FF] to-[#2563EB] bg-clip-text text-transparent">Foundation</span>
+                        </h2>
+                        <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+                            The principles that guide our journey and shape our impact as a community.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {foundationData.map((item) => (
+                            <div key={item.id}
+                                className="group relative rounded-2xl bg-[#121a2c]/80 border border-slate-800/80 p-8 backdrop-blur-sm transition-all duration-300  flex flex-col justify-between overflow-hidden"
+                            >
+
+                                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.accentGradient} opacity-70 group-hover:opacity-100 transition-opacity duration-300`} />
+
+                                <div className='relative'>
+                                    <div className="w-full h-34 rounded-xl bg-[#182237] relative left-1/3 p-4 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 group-hover:border-[#00F0FF]/50 transition-all duration-300">
+                                        {item.icon}
+                                    </div>
+
+                                    <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                                        {item.tagline}
+                                    </span>
+
+                                    <h3 className="text-2xl font-bold text-white mt-1 mb-4">
+                                        {item.title}
+                                    </h3>
+
+                                    <p className="text-slate-400 text-sm md:text-base leading-relaxed relative z-10">
+                                        {item.description}
+                                    </p>
+                                </div>
+
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="relative  text-slate-200 py-24 px-6 md:px-16 overflow-hidden">
+                <div className="max-w-7xl mx-auto relative z-10">
+
+                    <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+
+                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                            What <span className=" bg-[#00F0FF] bg-clip-text text-transparent">We Do</span>
+                        </h2>
+
+                        <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+                            Discover the various activities and programs that make our club unique and impact-driven.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {activities.map((item) => (
+                            <div
+                                key={item.id}
+                                className="group relative rounded-2xl bg-[#121a2c]/90 border border-slate-800/80 pt-0 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-700 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col justify-between overflow-hidden"
+                            >
+                                <div className="relative flex items-center justify-between mb-6">
+
+                                    <div className="w-24 h-24 relative rounded-tl-xl rounded-br-3xl bg-[#182237] flex items-center p-2 justify-center overflow-hidden transition-all duration-300 border-r border-b border-slate-700/50">
+                                        {item.image ? (
+                                            <Image
+                                                src={item.image}
+                                                alt={item.title ?? "Activity image"}
+                                                fill
+                                                className="object-cover group-hover:scale-110 transition-transform duration-300"
+                                            />
+                                        ) : (""
+                                        )}
+                                    </div>
+
+                                    <span className="text-[11px] pr-5 font-semibold tracking-wide uppercase px-2.5 py-1 rounded-md text-slate-400 group-hover:text-slate-200 transition-colors">
+                                        {item.badge}
+                                    </span>
+                                </div>
+
+                                <div className="pb-7 pr-7">
+                                    <h3 className="text-xl font-bold text-white mb-2.5 pl-7 group-hover:text-[#00F0FF] transition-colors duration-200">
+                                        {item.title}
+                                    </h3>
+
+                                    <p className="text-slate-400 text-sm leading-relaxed pl-7">
+                                        {item.description}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                </div>
+            </section>
+
+            <section className="relative  text-slate-200 py-24 px-6 md:px-16 overflow-hidden">
+
+                <div className="max-w-4xl mx-auto relative z-10 text-center">
+
+                    <div className="rounded-3xl bg-[#121a2c]/80 border border-slate-800/80 p-8 md:p-14 backdrop-blur-md shadow-2xl shadow-cyan-500/5 relative overflow-hidden">
+
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full  text-xs font-medium text-[#00F0FF] mb-6">
+                            <span className='font-semibold text-2xl'>Get Involved</span>
+                        </div>
+
+                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                            Join Us and <span className="bg-gradient-to-r from-[#37deea] to-[#2563EB] bg-clip-text text-transparent">Move Together</span>
+                        </h2>
+
+                        <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                            Ready to be part of something bigger? Explore our team, discover upcoming events, and see how you can contribute to our mission of technological innovation.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Link
+                                href="/team"
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white bg-[#2563EB] hover:opacity-95 transition-all duration-200  cursor-pointer"
+                            >
+                                <Users className="w-4 h-4" />
+                                <span>Meet Our Team</span>
+                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                            </Link>
+
+
+                            <Link
+                                href="/events"
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-slate-200 bg-[#162032] border border-slate-700/80 hover:bg-[#1f2b42] hover:text-white hover:border-slate-600 transition-all duration-200 cursor-pointer"
+                            >
+                                <Calendar className="w-4 h-4 text-[#00F0FF]" />
+                                <span>Explore Events</span>
+                            </Link>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     )
 }

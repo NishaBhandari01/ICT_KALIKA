@@ -5,14 +5,8 @@ import { Mail, MapPin, Phone, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-[#05F2DB]/15 bg-[#0B1120] text-[#ebe6e2]">
-
-
-      <div className="pointer-events-none absolute -top-32 left-1/4 h-64 w-64 rounded-full bg-[#05F2DB]/5 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 rounded-full bg-blue-600/5 blur-3xl" />
-
+    <footer className="relative overflow-hidden border-t border-[#1a1b1b] bg-[#0B1120] text-[#ebe6e2]">
       <div className="relative mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16">
-
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
 
           <div className="lg:col-span-2">
@@ -85,6 +79,24 @@ export default function Footer() {
               </a>
 
               <a
+                href="https://www.linkedin.com/company/ictkalika/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit our LinkedIn page"
+                className="flex h-11 w-11 items-center justify-center rounded-full transition-all duration-300"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-6 w-6"
+                  aria-hidden="true"
+                >
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124ZM7.119 20.452H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z" />
+                </svg>
+              </a>
+
+
+              <a
                 href="https://www.facebook.com/ictkalika"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -143,7 +155,7 @@ export default function Footer() {
 
               <div className="flex items-start gap-3">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ">
-                  <MapPin size={17} className="text-[#05F2DB]" />
+                  <MapPin size={24} className="text-[#05F2DB]" />
                 </div>
                 <div className="pt-1">
                   <p className="text-xs text-slate-500">Location</p>
@@ -156,11 +168,13 @@ export default function Footer() {
                 className="group flex items-start gap-3 transition-colors hover:text-[#05F2DB]"
               >
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ">
-                  <Mail size={17} className="text-[#05F2DB]" />
+                  <Mail size={24} className="text-[#05F2DB]" />
                 </div>
                 <div className="min-w-0 pt-1">
                   <p className="text-xs text-slate-500">Email</p>
-                  <p className="mt-1 break-all">ictkalika82@gmail.com</p>
+
+                  <p>ictkalika82@gmail.com</p>
+
                 </div>
               </a>
 
@@ -169,7 +183,7 @@ export default function Footer() {
                 className="group flex items-start gap-3 transition-colors hover:text-[#05F2DB]"
               >
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ">
-                  <Phone size={17} className="text-[#05F2DB]" />
+                  <Phone size={24} className="text-[#05F2DB]" />
                 </div>
                 <div className="pt-1">
                   <p className="text-xs text-slate-500">Phone</p>

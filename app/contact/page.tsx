@@ -2,8 +2,6 @@
 
 import React, { useState } from 'react';
 import { Mail, MapPin, ChevronUp } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 
 export default function ContactSection() {
     const [formData, setFormData] = useState({
@@ -29,26 +27,31 @@ export default function ContactSection() {
     };
 
     return (
-        <div>
-            <Navbar />
-            <section className="relative bg-[#0d1322] text-slate-200 py-16 px-6 md:px-16 min-h-screen flex items-center justify-center">
+        <div className='bg-[#0B1120]'>
+            <section className="relative  text-slate-200 py-16 px-6 md:px-16 min-h-screen flex items-center justify-center">
                 <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-                    {/* Left Column: Info */}
                     <div className="space-y-6">
                         <h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-[#00F0FF] to-[#2563EB] bg-clip-text text-transparent">
-                            Let's Connect
+                            Let's connect
                         </h2>
                         <p className="text-slate-400 text-base md:text-lg max-w-md leading-relaxed">
                             Have an exciting idea or just want to say hello? We're here to collaborate and create something amazing together.
                         </p>
+
+                        <p>Choose your preferred way to reach us</p>
 
                         <div className="space-y-4 pt-2">
                             <div className="flex items-center space-x-4">
                                 <div className="w-10 h-10 rounded-lg bg-[#162032] flex items-center justify-center text-slate-300">
                                     <Mail className="w-5 h-5 text-slate-400" />
                                 </div>
-                                <span className="text-slate-300 text-sm md:text-base">ictkalika82@gmail.com</span>
+                                <a
+                                    href="mailto:ictkalika@gmail.com"
+                                    className="inline-flex items-center gap-2 rounded-lg py-3 text-white "
+                                >
+                                    ictkalika82@gmail.com
+                                </a>
                             </div>
 
                             <div className="flex items-center space-x-4">
@@ -67,7 +70,7 @@ export default function ContactSection() {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-1.5">
-                                    <label className="block text-xs font-medium text-slate-300">
+                                    <label className="block text-xs font-semibold text-slate-300">
                                         Name
                                     </label>
                                     <input
@@ -82,7 +85,7 @@ export default function ContactSection() {
                                 </div>
 
                                 <div className="space-y-1.5">
-                                    <label className="block text-xs font-medium text-slate-300">
+                                    <label className="block text-xs font-semibold text-slate-300">
                                         Email
                                     </label>
                                     <input
@@ -99,7 +102,7 @@ export default function ContactSection() {
 
 
                             <div className="space-y-1.5">
-                                <label className="block text-xs font-medium text-slate-300">
+                                <label className="block text-xs font-semibold text-slate-300">
                                     Phone Number
                                 </label>
                                 <input
@@ -114,7 +117,7 @@ export default function ContactSection() {
 
 
                             <div className="space-y-1.5 relative">
-                                <label className="block text-xs font-medium text-slate-300">
+                                <label className="block text-xs font-semibold text-slate-300">
                                     Message
                                 </label>
                                 <textarea
@@ -152,8 +155,56 @@ export default function ContactSection() {
                     <ChevronUp className="w-5 h-5" />
                 </button>
             </section>
-            <Footer />
 
+            <section className=" px-6 py-16 text-white">
+                <div className="mx-auto max-w-7xl">
+                    <div className="mb-8 text-center">
+                        <h2 className="text-3xl font-bold md:text-4xl">
+                            Visit ICT Club of Kalika
+                        </h2>
+                        <p className="mt-3 text-gray-400">
+                            Find us on Google Maps and plan your visit.
+                        </p>
+                    </div>
+
+                    <div className="grid gap-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 md:grid-cols-2 md:p-6">
+
+                        <div className="min-h-[450px] overflow-hidden rounded-xl">
+                            <iframe
+                                title="ICT Club of Kalika location"
+                                src="https://maps.google.com/maps?q=Kalika%20Manavgyan%20Secondary%20School%2C%20Butwal&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                width="100%"
+                                height="100%"
+                                style={{ minHeight: "450px", border: 0 }}
+                                loading="lazy"
+                                allowFullScreen
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
+                        </div>
+
+                        <div className="flex flex-col justify-center p-4 md:p-8">
+                            <h3 className="text-2xl font-semibold">
+                                ICT Club of Kalika
+                            </h3>
+
+                            <p className="mt-3 leading-7 text-gray-400">
+                                Kalika Manavgyan Secondary School,
+                                Butwal, Rupandehi, Nepal.
+                            </p>
+
+                            <a
+                                href="https://www.google.com/maps/search/?api=1&query=Kalika+Manavgyan+Secondary+School+Butwal"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-[#4ea4cb] px-5 py-3 font-medium transition hover:bg-[#417993] "
+                            >
+                                Open in Google Maps
+                                <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
 
     );

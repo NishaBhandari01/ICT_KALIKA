@@ -1,9 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import Link from 'next/link';
 
 interface FAQItem {
@@ -55,9 +53,8 @@ export default function FAQSection() {
 
     return (
 
-        <div>
-            <Navbar />
-            <section className='bg-[#0d1322] text-slate-200 min-h-screen py-10 px-4 md:px-16'>
+        <div className='bg-[#0B1120]'>
+            <section className=' text-slate-200 min-h-screen py-10 px-4 md:px-16'>
                 <div className='text-center mb-12'>
                     <h2 className='text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-3'>Frequently Asked Questions</h2>
                 </div>
@@ -95,8 +92,6 @@ export default function FAQSection() {
 
                 </div>
             </section>
-            <Footer />
         </div>
-
     )
 }
