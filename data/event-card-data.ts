@@ -16,7 +16,7 @@ export const clubEvents: ClubEvent[] = [
     date: "7/27/2025",
     location: "Kalika Manavgyan Secondary School",
     participants: "100 participants",
-    image: "/installation.avif", // Update with your actual image path
+    image: "/installation.avif", 
   },
   {
     id: "2",

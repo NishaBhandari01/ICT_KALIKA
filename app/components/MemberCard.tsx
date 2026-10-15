@@ -13,6 +13,7 @@ export type Socials = {
     youtube?: string;
     email?: string;
     x?: string;
+    website?: string;
 };
 
 export type Member = {
@@ -144,6 +145,26 @@ export const MemberShowcase: React.FC<CardProps> = ({ membersData }) => {
                 );
 
 
+            case "website":
+            case "web":
+                return (
+                    <a
+                        key={platform}
+                        href={finalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit Website"
+                        className="flex h-10 w-10 items-center justify-center rounded-full text-gray-400 hover:text-blue-400 hover:bg-white/5 transition-all duration-300"
+                    >
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            <path d="M2 12h20" />
+                        </svg>
+                    </a>
+                );
+
+
             default:
                 return null;
         }
@@ -201,7 +222,7 @@ export const MemberShowcase: React.FC<CardProps> = ({ membersData }) => {
 
             {selectedMember && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
-                    <div className="relative w-full max-w-md bg-gray-700 border border-black rounded-2xl p-6 text-center text-white shadow-2xl space-y-5">
+                    <div className="relative w-full max-w-md bg-gray-900 border border-black rounded-2xl p-6 text-center text-white shadow-2xl space-y-5">
                         <button
                             onClick={() => setSelectedMember(null)}
                             className="absolute top-4 right-4 text-gray-400 hover:text-white p-1 rounded-full hover:bg-white/10 transition"
@@ -247,7 +268,7 @@ export const MemberShowcase: React.FC<CardProps> = ({ membersData }) => {
                                 </h4>
                                 <div className="flex flex-wrap justify-center gap-2">
                                     {selectedMember.skills.map((skill, index) => (
-                                        <span key={index} className="px-3 py-1 text-xs font-medium border border-slate-600 bg-[#726f6f] text-gray-300 rounded-full">
+                                        <span key={index} className="px-3 py-1 text-xs font-semibold tracking-wide bg-[#726f6f] text-gray-300 rounded-full">
                                             {skill}
                                         </span>
                                     ))}

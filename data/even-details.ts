@@ -125,7 +125,6 @@ export const eventDetailsData: Record<string, EventDetail> = {
         ]
     },
 
-
     "4": {
         id: "4",
         title: "DIGITAL HORIZON - Syangja Edition",

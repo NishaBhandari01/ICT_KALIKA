@@ -1,8 +1,9 @@
 "use client";
 
+import { Suspense } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { eventDetailsData } from "@/data/even-details";
-import EventGalleryCarousel from '@/app/components/carousel'
+import EventGalleryCarousel from "@/app/components/carousel";
 import {
     Calendar,
     MapPin,
@@ -12,6 +13,20 @@ import {
 } from "lucide-react";
 
 export default function EventDetailPage() {
+    return (
+        <Suspense
+            fallback={
+                <div className="min-h-screen bg-[#080d1e] text-white flex items-center justify-center">
+                    Loading event details...
+                </div>
+            }
+        >
+            <EventDetailContent />
+        </Suspense>
+    );
+}
+
+ function EventDetailContent() {
     const params = useParams();
     const router = useRouter();
 
