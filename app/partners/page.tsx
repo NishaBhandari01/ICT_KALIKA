@@ -1,5 +1,8 @@
-import React from 'react';
+"use client";
+
+import { motion } from "framer-motion";
 import Image from 'next/image';
+import CollaborationDiagram from '../components/CollaborationDiagram';
 
 import {
   GraduationCap,
@@ -62,29 +65,17 @@ const benefits: Benefit[] = [
 const Page = () => {
   return (
     <div className="bg-[#0B1120] min-h-screen">
-      <section className="text-white relative overflow-hidden pb-12 sm:pb-16">
+      <section className="text-white relative overflow-hidden pb-10 sm:pb-14">
 
-        <div className="relative h-[250px] sm:h-[380px] md:h-[480px] w-full overflow-hidden pointer-events-none">
-          <Image
-            src="/partership.jpg"
-            alt="Partnership"
-            fill
-            priority
-            sizes="100vw"
-            className="object-content object-center transition-transform duration-500 hover:scale-105"
-          />
-          <div className="pointer-events-none absolute inset-0 z-10 bg-[#080d1e]/60" />
-        </div>
 
+        <CollaborationDiagram />
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20 -mt-16 sm:-mt-24">
 
           <div className="flex flex-col justify-center items-center text-center gap-3 max-w-3xl mx-auto py-4">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-lg sm:text-2xl font-semibold capitalize text-gray-400 tracking-wide bg-slate-900/40 backdrop-blur-md border border-white/5">
-              Our Partners
-            </span>
 
-            <h2 className="text-2xl mt-20 sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+
+            <h2 className="text-2xl mt-20 sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight">
               Empowering Dreams,{" "}
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 Anchored in Trust
@@ -112,10 +103,10 @@ const Page = () => {
 
 
               <div className="space-y-2">
-                <span className="inline-block px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-widest text-cyan-400 bg-cyan-950/40 border border-cyan-500/20">
+                <span className="inline-block px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-widest text-gray-400 ">
                   Founding Partner
                 </span>
-                <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold tracking-wide text-white uppercase">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-wide text-[#00F0FF] uppercase">
                   Kalika Manavgyan Secondary School
                 </h2>
               </div>
@@ -157,16 +148,22 @@ const Page = () => {
 
 
           <div className="space-y-8 sm:space-y-10">
-            <div className="text-center space-y-3 max-w-2xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="text-center space-y-3 max-w-2xl mx-auto"
+            >
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
                 Partnership Benefits
               </h2>
               <p className="text-gray-400 text-xs sm:text-sm md:text-base">
                 How our strategic partnership with <span className="text-cyan-400 font-medium">Kalika Manavgyan Secondary School</span> empowers our members.
               </p>
-            </div>
+            </motion.div>
 
-            {/* Benefits Grid */}
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {benefits.map((benefit, idx) => {
                 const isFeatured = idx === 0 || idx === 3;
@@ -175,8 +172,8 @@ const Page = () => {
                   <div
                     key={idx}
                     className={`group relative rounded-2xl p-6 sm:p-7 backdrop-blur-md border border-slate-800/80 transition-all duration-300 hover:-translate-y-1.5 shadow-xl flex flex-col justify-between ${isFeatured
-                        ? "md:col-span-2 bg-gradient-to-br from-[#0F172A] via-[#0F172A]/90 to-cyan-950/30"
-                        : "col-span-1 bg-[#0F172A]/70 hover:bg-[#0F172A]/90"
+                      ? "md:col-span-2 bg-gradient-to-br from-[#0F172A] via-[#0F172A]/90 to-cyan-950/30"
+                      : "col-span-1 bg-[#0F172A]/70 hover:bg-[#0F172A]/90"
                       }`}
                   >
                     {isFeatured && (
@@ -196,7 +193,7 @@ const Page = () => {
                         />
                       </div>
 
-                      <h3 className={`font-bold text-white group-hover:text-cyan-300 transition-colors ${isFeatured ? "text-xl sm:text-2xl md:text-3xl" : "text-lg sm:text-xl"}`}>
+                      <h3 className={`font-bold text-white group-hover:text-cyan-300 transition-colors text-lg sm:text-xl`}>
                         {benefit.title}
                       </h3>
 
@@ -210,7 +207,7 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="relative rounded-3xl bg-gradient-to-r from-blue-950/80 via-[#0F172A]/90 to-slate-900/80 border border-blue-800/50 p-6 sm:p-8 md:p-12 text-center overflow-hidden shadow-2xl backdrop-blur-xl">
+          <div className="relative rounded-3xl bg-[#0F172A]/90 to-slate-900/80 border border-blue-800/50 p-6 sm:p-8 md:p-12 text-center overflow-hidden shadow-2xl backdrop-blur-xl">
             <div className="relative z-10 max-w-2xl mx-auto space-y-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
                 Become Our Partner

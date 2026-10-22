@@ -27,6 +27,30 @@ const iconVariants: Variants = {
 };
 
 const Hero = () => {
+
+    const text = "A community of curious minds and passionate learners. Together, we learn beyond the classroom, turn imagination into innovation, and create opportunities to grow, inspire, and make an impact.";
+    const words = text.split(" ");
+
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.03,
+                delayChildren: 0.1,
+            },
+        },
+    };
+
+    const wordVariants: Variants = {
+        hidden: { opacity: 0, y: 10 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.4, ease: "easeOut" },
+        },
+    };
+
     return (
         <section className="min-h-screen bg-[#0B1120] text-[#ebe6e2] overflow-hidden">
 
@@ -150,35 +174,57 @@ const Hero = () => {
                     </motion.div>
                 </div>
 
+
                 <motion.div
                     initial={{ opacity: 0, y: 35 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                    className="order-1 md:order-3 flex max-w-sm flex-col text-center md:items-start md:text-left"
+                    transition={{
+                        duration: 1,
+                        delay: 0.2,
+                        ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="order-1 md:order-3 flex max-w-sm flex-col gap-1 text-center md:items-start md:text-left"
                 >
                     <h2 className="mt-2 text-2xl sm:text-3xl font-bold leading-tight">
                         Turning Ideas Into{" "}
                         <span className="text-[#05F2DB]">Innovation.</span>
                     </h2>
 
-                    <span className="my-3 text-lg sm:text-xl text-[#949DAB]">
+                    <span className="my-3 text-lg sm:text-xl font-semibold text-[#559499]">
                         Innovate. Inspire. Impact.
                     </span>
+
+                    <motion.p
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-50px" }}
+                        className="text-sm sm:text-base leading-5 text-[#949DAB] flex flex-wrap gap-x-[0.25rem] gap-y-1"
+                    >
+                        {words.map((word, index) => (
+                            <motion.span key={index} variants={wordVariants} className="inline-block">
+                                {word}
+                            </motion.span>
+                        ))}
+                    </motion.p>
+
+
 
                     <motion.a
                         href="/events"
                         whileHover={{ y: -3 }}
                         whileTap={{ scale: 0.98 }}
                         transition={{ duration: 0.25, ease: "easeOut" }}
-                        className="mt-2 inline-flex items-center rounded-3xl bg-[#05F2DB] px-6 py-3 font-semibold text-[#0B1120] transition-shadow duration-300 hover:shadow-lg hover:shadow-[#05F2DB]/20"
+                        className="mt-5 inline-flex items-center rounded-3xl bg-[#05F2DB] px-6 py-3 font-semibold text-[#0B1120] transition-shadow duration-300 hover:shadow-lg hover:shadow-[#05F2DB]/20"
                     >
                         Explore Events →
                     </motion.a>
                 </motion.div>
 
+
             </div>
 
-            <div className="mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto px-4 pb-12">
+            <div className="mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto px-4 pb-12 items-center">
                 <div className="flex flex-col items-center justify-center p-6 text-center transition-transform duration-300 hover:-translate-y-1">
                     <div className="relative h-12 w-12 mb-2">
                         <Image src="/users.png" alt="Active members" fill sizes="48px" className="object-contain" />

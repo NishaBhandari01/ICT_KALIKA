@@ -3,49 +3,60 @@
 import React from 'react'
 import Image from 'next/image'
 import {
-    Award, Eye, Target,
     Users,
     ArrowRight,
     Calendar
 } from 'lucide-react';
 import Link from 'next/link';
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import { Sparkles, ChevronDown } from "lucide-react";
 import { foundationData, activities } from '@/data/activities';
 
-
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.2,
-            delayChildren: 0.1,
-        },
-    },
-};
-
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 0.8,
-            ease: [0.22, 1, 0.36, 1] as const,
-        },
-    },
+interface AboutHeroProps {
+    containerVariants?: Variants;
+    itemVariants?: Variants;
 }
 
 
 
 
 
-const page = () => {
+const AboutSection = ({ containerVariants,
+    itemVariants
+}: AboutHeroProps) => {
+
+    const defaultContainer: Variants = containerVariants || {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+        },
+    };
+
+    const defaultItem: Variants = itemVariants || {
+        hidden: { opacity: 0, y: 25 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+        },
+    };
+
+
+
+    const cardVariants: Variants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+        },
+    };
+
     return (
         <div className='bg-[#0B1120]'>
 
-            <section className="relative flex min-h-screen items-center justify-center overflow-hidden  px-6 py-16 text-slate-200 md:px-16">
+            <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-16 text-slate-200 md:px-16">
                 <Image
                     src="/kmss-ground.jpg"
                     alt="Technology background"
@@ -55,48 +66,79 @@ const page = () => {
                     className="object-cover"
                 />
 
-                <div className="absolute inset-0 z-[1] bg-[#0B1120]/75" />
-
-
-                <div className="absolute left-6 top-6 z-10 md:left-16 md:top-10">
-                    <Image
-                        src="/logo.avif"
-                        alt="ICT Club logo"
-                        width={80}
-                        height={80}
-                        className="h-38 w-38 object-contain md:h-40 md:w-40"
-                    />
-                </div>
-
-                <div className="absolute right-6 top-6 z-10 md:right-16 md:top-10">
-                    <Image
-                        src="/school-logo.png"
-                        alt="School logo"
-                        width={120}
-                        height={120}
-                        className="h-38 w-38 object-contain md:h-40 md:w-40"
-                    />
-                </div>
+                <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#0B1120]/80 via-[#0B1120]/70 to-[#0B1120]/90" />
 
                 <motion.div
-                    className="relative z-10 mx-auto max-w-4xl text-center"
-                    variants={containerVariants}
+                    initial={{ opacity: 0, x: -30, y: -20 }}
+                    animate={{ opacity: 1, x: 0, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="absolute left-6 top-6 z-10 md:left-12 md:top-10"
+                >
+                    <div className="rounded-2xl bg-[#0B1120]/60 p-2.5 backdrop-blur-md border border-white/10 shadow-xl hover:border-[#05F2DB]/40 transition-colors">
+                        <Image
+                            src="/logo.avif"
+                            alt="ICT Club logo"
+                            width={90}
+                            height={90}
+                            className="h-20 w-20 object-contain md:h-28 md:w-28"
+                        />
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, x: 30, y: -20 }}
+                    animate={{ opacity: 1, x: 0, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+                    className="absolute right-6 top-6 z-10 md:right-12 md:top-10"
+                >
+                    <div className="rounded-2xl bg-[#0B1120]/60 p-2.5 backdrop-blur-md border border-white/10 shadow-xl hover:border-[#3bb6d5]/40 transition-colors">
+                        <Image
+                            src="/school-logo.png"
+                            alt="School logo"
+                            width={90}
+                            height={90}
+                            className="h-20 w-20 object-contain md:h-28 md:w-28"
+                        />
+                    </div>
+                </motion.div>
+
+
+                <motion.div
+                    className="relative z-10 mx-auto max-w-4xl text-center space-y-6"
+                    variants={defaultContainer}
                     initial="hidden"
                     animate="visible"
                 >
+                    <motion.div variants={defaultItem} className="flex justify-center">
+                        <span className="inline-flex items-center gap-2  bg-[#05F2DB]/5 px-4 py-1.5 text-xs sm:text-sm font-semibold tracking-wider text-[#05F2DB]  backdrop-blur-sm shadow-[0_0_20px_rgba(5,242,219,0.15)]">
+                            Kalika Manavgyan Secondary School
+                        </span>
+                    </motion.div>
+
                     <motion.h1
-                        variants={itemVariants}
-                        className="bg-gradient-to-r from-[#05F2DB] to-[#2563EB] bg-clip-text text-4xl font-extrabold text-transparent sm:text-6xl"
+                        variants={defaultItem}
+                        className="bg-gradient-to-r from-[#05F2DB] via-[#3bb6d5] to-[#2563EB] bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl md:text-5xl tracking-tight pb-2"
                     >
                         ICT Club of Kalika
                     </motion.h1>
 
+
                     <motion.p
-                        variants={itemVariants}
-                        className="mx-auto mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg"
+                        variants={defaultItem}
+                        className="mx-auto max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg md:text-xl font-light"
                     >
-                        Innovating the future through technology and collaboration
+                        Innovating the future through technology, hands-on learning, and collaborative student leadership.
                     </motion.p>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: [0, 8, 0] }}
+                    transition={{ opacity: { duration: 1 }, y: { repeat: Infinity, duration: 2, ease: "easeInOut" } }}
+                    className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-1 text-slate-400 text-xs tracking-widest uppercase"
+                >
+                    <span>Scroll Down</span>
+                    <ChevronDown className="w-4 h-4 text-[#05F2DB]" />
                 </motion.div>
             </section>
 
@@ -197,46 +239,64 @@ const page = () => {
                 </div>
             </section>
 
-            <section className="relative  text-slate-200 py-24 px-6 md:px-16 overflow-hidden">
-                <div className="max-w-7xl mx-auto relative z-10">
-                    <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-                        <div className="inline-flex items-center gap-2 px-3  text-xs ">
-                            <span className='font-semibold text-2xl text-gray-600'>Core Pillars</span>
-                        </div>
-                        <h2 className="text-4xl md:text-4xl font-extrabold tracking-tight text-white">
-                            Our <span className="bg-[#05F2DB] bg-clip-text text-transparent">Foundation</span>
-                        </h2>
-                        <p className="text-slate-400 text-base md:text-lg leading-relaxed">
-                            The principles that guide our journey and shape our impact as a community.
-                        </p>
-                    </div>
+            <section className="relative text-slate-200 py-24 px-6 md:px-16 overflow-hidden bg-[#070C18]">
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <div className="max-w-7xl mx-auto relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="text-center max-w-2xl mx-auto mb-16 space-y-3"
+                    >
+                        <div className="inline-flex items-center gap-2 px-3 py-1 text-gray-500 text-xs font-semibold uppercase tracking-wider text-[#05F2DB]">
+                            <span>Core Pillars</span>
+                        </div>
+
+                        <h2 className="text-3xl  md:text-4xl font-extrabold tracking-tight text-white">
+                            Our <span className="bg-gradient-to-r from-[#05F2DB] to-[#3bb6d5] bg-clip-text text-transparent">Foundation</span>
+                        </h2>
+
+                        <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+                            The principles that guide our journey and shape our impact as a technology community.
+                        </p>
+                    </motion.div>
+
+
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-50px" }}
+                        className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                    >
                         {foundationData.map((item) => (
-                            <div
+                            <motion.div
                                 key={item.id}
-                                className="group relative rounded-2xl bg-[#121a2c]/80 border border-slate-800/80 p-8 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                                variants={cardVariants}
+                                className="group relative rounded-2xl bg-[#121a2c]/80 border border-slate-800/80 p-8 backdrop-blur-md transition-all duration-300 flex flex-col justify-between overflow-hidden hover:border-[#05F2DB]/40 "
                             >
 
-                                <div className={`absolute top-0 left-0 h-1 bg-[#aaa] opacity-90 group-hover:opacity-100 transition-opacity duration-300 animate-fill-bar`} />
+                                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#05F2DB] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                                <div className='relative'>
-                                    <div className="w-full h-34 rounded-xl bg-[#182237] relative left-1/3 p-4 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 group-hover:border-[#00F0FF]/50 transition-all duration-300">
-                                        {item.icon}
+                                    <div className='relative'>
+
+                                        <div className="w-full h-34 rounded-xl bg-[#182237] relative left-1/3 p-4 flex items-center justify-center mb-6 shadow-inner  group-hover:border-[#00F0FF]/50 transition-all duration-300">
+                                            {item.icon}
+                                        </div>
+
+                                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#05F2DB] transition-colors">
+                                            {item.title}
+                                        </h3>
+
+                                        <p className="text-slate-400 text-sm md:text-base leading-relaxed relative z-10">
+                                            {item.description}
+                                        </p>
                                     </div>
-
-
-                                    <h3 className="text-2xl font-bold text-white mt-1 mb-4">
-                                        {item.title}
-                                    </h3>
-
-                                    <p className="text-slate-400 text-sm md:text-base leading-relaxed relative z-10">
-                                        {item.description}
-                                    </p>
-                                </div>
-                            </div>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
             </section>
 
@@ -245,7 +305,7 @@ const page = () => {
 
                     <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
 
-                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
                             What <span className=" bg-[#00F0FF] bg-clip-text text-transparent">We Do</span>
                         </h2>
 
@@ -301,12 +361,12 @@ const page = () => {
 
                     <div className="rounded-3xl bg-[#121a2c]/80 border border-slate-800/80 p-8 md:p-14 backdrop-blur-md shadow-2xl shadow-cyan-500/5 relative overflow-hidden">
 
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full  text-xs font-medium text-[#00F0FF] mb-6">
-                            <span className='font-semibold text-2xl'>Get Involved</span>
+                        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full  text-xs font-medium text-gray-500 mb-2">
+                            <span className='font-semibold text-xl'>Get Involved</span>
                         </div>
 
-                        <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                            Join Us and <span className="bg-gradient-to-r from-[#37deea] to-[#2563EB] bg-clip-text text-transparent">Move Together</span>
+                        <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                            Join Us and <span className="bg-[#37deea]  bg-clip-text text-transparent">Move Together</span>
                         </h2>
 
                         <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
@@ -316,7 +376,7 @@ const page = () => {
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
                                 href="/team"
-                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white bg-[#2563EB] hover:opacity-95 transition-all duration-200  cursor-pointer"
+                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white bg-[#1b696f] hover:opacity-95 transition-all duration-200  cursor-pointer"
                             >
                                 <Users className="w-4 h-4" />
                                 <span>Meet Our Team</span>
@@ -340,4 +400,4 @@ const page = () => {
     )
 }
 
-export default page
+export default AboutSection

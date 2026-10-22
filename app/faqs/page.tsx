@@ -57,6 +57,7 @@ export default function FAQSection() {
             <section className=' text-slate-200 min-h-screen py-10 px-4 md:px-16'>
                 <div className='text-center mb-12'>
                     <h2 className='text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-3'>Frequently Asked Questions</h2>
+                    <span className='text-[#05F2DB]'>(FAQ..)</span>
                 </div>
                 <div className='max-w-4xl space-y-4 mx-auto w-full'>
                     {

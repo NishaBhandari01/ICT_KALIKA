@@ -146,6 +146,8 @@ export const MemberShowcase: React.FC<CardProps> = ({ membersData }) => {
 
 
             case "website":
+        
+        
             case "web":
                 return (
                     <a
@@ -176,7 +178,7 @@ export const MemberShowcase: React.FC<CardProps> = ({ membersData }) => {
                 {membersData.map((cat, idx) => (
                     <div key={idx} className="space-y-6">
 
-                        <h2 className="text-2xl md:text-3xl font-bold text-center capitalize tracking-wide text-blue-100">
+                        <h2 className="text-2xl md:text-3xl font-bold text-center capitalize tracking-wide text-[#00F0FF]">
                             {cat.category.replace(/_/g, " ")}
                         </h2>
 

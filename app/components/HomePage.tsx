@@ -152,7 +152,7 @@ export default function HomePage() {
         <div className="w-full max-w-3xl mx-auto space-y-4">
 
           <h3 className="text-xl md:text-2xl font-bold text-blue-100 text-center mb-8 tracking-wide">
-            Additional Programs in Butwal
+            Additional Programs in <span className="text-[#00F0FF]">Butwal</span> 
           </h3>
 
           {programs.map((program, index) => {

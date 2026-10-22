@@ -1,19 +1,72 @@
 "use client"
 import React from 'react'
 import Image from 'next/image';
-import { ArrowUpRight, Calendar, MapPin, Users } from 'lucide-react';
+import { ArrowUpRight, MapPin, } from 'lucide-react';
 import { clubEvents } from '@/data/event-card-data';
 import { useRouter } from 'next/navigation';
+import { motion, Variants } from "framer-motion";
+import { Users, Calendar, Trophy, GraduationCap, Code, BookOpen } from "lucide-react";
 
+interface NodeCardProps {
+    label: string;
+    icon: React.ReactNode;
+}
 
 
 const IctKalikaNetwork = () => {
     const router = useRouter();
+
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.12,
+                delayChildren: 0.1,
+            },
+        },
+    };
+
+    const centerLogoVariants: Variants = {
+        hidden: { opacity: 0, scale: 0.5 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+        },
+    };
+
+    const topNodeVariants: Variants = {
+        hidden: { opacity: 0, y: -30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+
+    const bottomNodeVariants: Variants = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+
+    const leftNodeVariants: Variants = {
+        hidden: { opacity: 0, x: -30 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+
+    const rightNodeVariants: Variants = {
+        hidden: { opacity: 0, x: 30 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    };
+
     return (
         <div className='bg-[#0B1120]'>
-            <section className='mb-15 text-[#ebe6e2] px-4'>
-                <div className="relative w-full max-w-4xl mx-auto min-h-[auto] md:min-h-[500px] flex flex-col md:flex-row items-center justify-center p-4 text-white rounded-2xl overflow-hidden">
-
+            <section className="mb-10 text-[#ebe6e2] px-4 py-20 overflow-hidden bg-[#070C18]">
+                <motion.div
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="relative w-full max-w-4xl mx-auto min-h-[auto] md:min-h-[450px] flex flex-col md:flex-row items-center justify-center p-4 text-white rounded-2xl"
+                >
+                    {/* Connecting SVG Lines (Desktop) */}
                     <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
                         viewBox="0 0 800 600"
                         fill="none"
@@ -21,115 +74,121 @@ const IctKalikaNetwork = () => {
                     >
                         <path
                             d="M 400 300 C 380 200, 280 140, 220 140"
-                            stroke="#94a3b8"
+                            stroke="#05F2DB"
                             strokeWidth="1.5"
                             strokeDasharray="4 4"
-                            className="opacity-60"
+                            className="opacity-40"
                         />
                         <path
                             d="M 400 300 C 400 220, 400 130, 400 90"
-                            stroke="#94a3b8"
+                            stroke="#05F2DB"
                             strokeWidth="1.5"
                             strokeDasharray="4 4"
-                            className="opacity-60"
+                            className="opacity-40"
                         />
                         <path
                             d="M 400 300 C 420 200, 520 140, 580 140"
-                            stroke="#94a3b8"
+                            stroke="#05F2DB"
                             strokeWidth="1.5"
                             strokeDasharray="4 4"
-                            className="opacity-60"
+                            className="opacity-40"
                         />
                         <path
                             d="M 400 300 C 300 350, 220 400, 220 440"
-                            stroke="#94a3b8"
+                            stroke="#05F2DB"
                             strokeWidth="1.5"
                             strokeDasharray="4 4"
-                            className="opacity-60"
+                            className="opacity-40"
                         />
                         <path
                             d="M 400 300 C 400 380, 400 440, 400 480"
-                            stroke="#94a3b8"
+                            stroke="#05F2DB"
                             strokeWidth="1.5"
                             strokeDasharray="4 4"
-                            className="opacity-60"
+                            className="opacity-40"
                         />
                         <path
                             d="M 400 300 C 500 350, 580 400, 580 440"
-                            stroke="#94a3b8"
+                            stroke="#05F2DB"
                             strokeWidth="1.5"
                             strokeDasharray="4 4"
-                            className="opacity-60"
+                            className="opacity-40"
                         />
                     </svg>
 
-       
-                    <div className="flex md:hidden flex-col items-center gap-6 w-full py-6">
-                        <div className="flex flex-wrap justify-center gap-3 w-full">
-                            <NodeCard label="Community" />
-                            <NodeCard label="Events" />
-                            <NodeCard label="Hackathons" />
-                        </div>
+                    {/* Mobile Layout */}
+                    <div className="flex md:hidden flex-col items-center gap-5 w-full py-6">
+                        <motion.div variants={topNodeVariants} className="flex flex-wrap justify-center gap-3 w-full">
+                            <NodeCard label="Community" icon={<Users className="w-4 h-4" />} />
+                            <NodeCard label="Events" icon={<Calendar className="w-4 h-4" />} />
+                            <NodeCard label="Hackathons" icon={<Trophy className="w-4 h-4" />} />
+                        </motion.div>
 
-                        <div className="relative h-32 w-32 overflow-hidden animate-pulse rounded-full bg-[#0B1120] border-2 border-cyan-500/40 shadow-[0_0_35px_#05F2DB25] my-2">
+                        <motion.div variants={centerLogoVariants} className="relative h-32 w-32 overflow-hidden rounded-full bg-[#0B1120] border-2 border-[#05F2DB]/60 shadow-[0_0_35px_rgba(5,242,219,0.3)] my-2">
                             <Image
                                 src="/logo.avif"
                                 alt="ICT Club of Kalika logo"
                                 fill
                                 priority
                                 sizes="128px"
-                                className="rounded-full object-contain"
+                                className="rounded-full object-contain p-2"
                             />
-                        </div>
+                        </motion.div>
 
-                        <div className="flex flex-wrap justify-center gap-3 w-full">
-                            <NodeCard label="Mentorship" />
-                            <NodeCard label="Open Source" />
-                            <NodeCard label="Workshops" />
-                        </div>
+                        <motion.div variants={bottomNodeVariants} className="flex flex-wrap justify-center gap-3 w-full">
+                            <NodeCard label="Mentorship" icon={<GraduationCap className="w-4 h-4" />} />
+                            <NodeCard label="Open Source" icon={<Code className="w-4 h-4" />} />
+                            <NodeCard label="Workshops" icon={<BookOpen className="w-4 h-4" />} />
+                        </motion.div>
                     </div>
 
+
                     <div className="hidden md:block relative w-full h-[500px]">
-                        <div className="absolute top-[18%] left-[15%] transform -translate-y-1/2">
-                            <NodeCard label="Events" />
-                        </div>
+                        <motion.div variants={leftNodeVariants} className="absolute top-[18%] left-[16%] transform -translate-y-1/2">
+                            <NodeCard label="Events" icon={<Calendar className="w-4 h-4" />} />
+                        </motion.div>
 
-                        <div className="absolute top-[8%] left-1/2 transform -translate-x-1/2">
-                            <NodeCard label="Community" />
-                        </div>
+                        <motion.div variants={topNodeVariants} className="absolute top-[8%] left-1/2 transform -translate-x-1/2">
+                            <NodeCard label="Community" icon={<Users className="w-4 h-4" />} />
+                        </motion.div>
 
-                        <div className="absolute top-[18%] right-[15%] transform -translate-y-1/2">
-                            <NodeCard label="Hackathons" />
-                        </div>
+                        <motion.div variants={rightNodeVariants} className="absolute top-[18%] right-[16%] transform -translate-y-1/2">
+                            <NodeCard label="Hackathons" icon={<Trophy className="w-4 h-4" />} />
+                        </motion.div>
 
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                            <div className="relative h-44 w-44 overflow-hidden animate-pulse rounded-full bg-[#0B1120] border-2 border-cyan-500/40 shadow-[0_0_35px_#05F2DB25]">
+                        <motion.div variants={centerLogoVariants} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                            <div className="relative h-44 w-44 overflow-hidden rounded-full bg-[#0B1120] border-2 border-[#05F2DB]/70 flex items-center justify-center ">
+                                <motion.div
+                                    animate={{ rotate: 360 }}
+                                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                                    className="absolute inset-2 rounded-full border border-dashed border-[#05F2DB]/30 pointer-events-none"
+                                />
                                 <Image
                                     src="/logo.avif"
                                     alt="ICT Club of Kalika logo"
                                     fill
                                     priority
                                     sizes="176px"
-                                    className="rounded-full object-contain"
+                                    className="rounded-full object-contain p-2.5"
                                 />
                             </div>
-                        </div>
+                        </motion.div>
 
-                        <div className="absolute bottom-[18%] left-[15%] transform translate-y-1/2">
-                            <NodeCard label="Mentorship" />
-                        </div>
+                        <motion.div variants={leftNodeVariants} className="absolute bottom-[18%] left-[16%] transform translate-y-1/2">
+                            <NodeCard label="Mentorship" icon={<GraduationCap className="w-4 h-4" />} />
+                        </motion.div>
 
-                        <div className="absolute bottom-[8%] left-1/2 transform -translate-x-1/2">
-                            <NodeCard label="Open Source" />
-                        </div>
+                        <motion.div variants={bottomNodeVariants} className="absolute bottom-[8%] left-1/2 transform -translate-x-1/2">
+                            <NodeCard label="Open Source" icon={<Code className="w-4 h-4" />} />
+                        </motion.div>
 
-                        <div className="absolute bottom-[18%] right-[15%] transform translate-y-1/2">
-                            <NodeCard label="Workshops" />
-                        </div>
+                        <motion.div variants={rightNodeVariants} className="absolute bottom-[18%] right-[16%] transform translate-y-1/2">
+                            <NodeCard label="Workshops" icon={<BookOpen className="w-4 h-4" />} />
+                        </motion.div>
                     </div>
-
-                </div>
+                </motion.div>
             </section>
+
             <section className='bg-[#0B1120] text-[#ebe6e2] px-6 py-4 pb-20'>
                 <div className="max-w-7xl mx-auto space-y-26 relative z-10">
 
@@ -189,7 +248,7 @@ const IctKalikaNetwork = () => {
                                 </div>
 
                                 <div className="px-6 pb-6 pt-0">
-                                    <div onClick={()=>router.push(`/events/${event.id}`)} className="w-full flex items-center justify-between pt-4  text-xs font-semibold text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                                    <div onClick={() => router.push(`/events/${event.id}`)} className="w-full flex items-center justify-between pt-4  text-xs font-semibold text-cyan-400 group-hover:text-cyan-300 transition-colors">
                                         <span>View Details</span>
                                         <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                                     </div>
@@ -207,10 +266,15 @@ const IctKalikaNetwork = () => {
 export default IctKalikaNetwork
 
 
-const NodeCard: React.FC<{ label: string }> = ({ label }) => {
+const NodeCard: React.FC<NodeCardProps> = ({ label, icon }) => {
     return (
-        <div className="relative group bg-white/95 text-slate-800 border border-slate-200/80 rounded-full px-8 py-2.5 shadow-md hover:shadow-blue-500/20 hover:border-blue-400 transition-all duration-300 cursor-pointer text-center min-w-[140px]">
-            <span className="font-semibold text-sm md:text-base text-slate-800 group-hover:text-blue-600 transition-colors">
+        <div
+            className="flex items-center gap-3 px-5 py-3 rounded-full bg-[#0B1120]/90 border border-[#05F2DB]/30  backdrop-blur-md cursor-pointer  hover:border-[#05F2DB] transition-all duration-300"
+        >
+            <div className="w-8 h-8 rounded-lg  flex items-center justify-center text-[#05F2DB] ">
+                {icon}
+            </div>
+            <span className="text-sm font-semibold tracking-wide text-white group-hover:text-[#05F2DB] transition-colors">
                 {label}
             </span>
         </div>

@@ -103,7 +103,7 @@ export default function MajorAchievements() {
                   )}
 
                   <div className="space-y-1 mb-3 relative">
-                    <h3 className="text-lg md:text-xl font-bold text-gray-100 group-hover:text-white tracking-wide">
+                    <h3 className="text-lg md:text-xl font-bold text-teal-300 group-hover:text-white tracking-wide">
                       {item.title}
                     </h3>
                   </div>

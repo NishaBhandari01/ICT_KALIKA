@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Mail, MapPin, ChevronUp, Loader2, ArrowBigLeft, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Mail, MapPin, ChevronUp, Loader2, ArrowRight } from 'lucide-react';
 import { toast } from 'react-hot-toast';
+import { motion, Variants } from "framer-motion";
 
 interface FormDataState {
     name: string;
@@ -31,9 +32,7 @@ export default function ContactSection() {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setLoading(true);
-        console.log(
-            "i am running"
-        )
+        console.log("i am running");
         try {
             const res = await fetch("/api/contact", {
                 method: "POST",
@@ -68,13 +67,52 @@ export default function ContactSection() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    return (
-        <div className="bg-[#0B1120]">
-            <section className="relative text-slate-200 py-16 px-6 md:px-16 min-h-screen flex items-center justify-center">
-                <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    // Stagger Container Variant
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.1,
+            },
+        },
+    };
 
-                    <div className="space-y-6">
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-[#00F0FF] to-[#2563EB] bg-clip-text text-transparent">
+
+    const itemVariants: Variants = {
+        hidden: { opacity: 0, y: 25 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+        },
+    };
+
+    return (
+        <div className="bg-[#0B1120] overflow-hidden">
+            <motion.div 
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="text-center max-w-2xl mx-auto space-y-4 pt-16 px-6"
+            >
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white capitalize">
+                    We will be happy to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#05F2DB] to-[#3bb6d5]">listen to your idea</span>
+                </h2>
+        
+            </motion.div>
+
+            <section className="relative text-slate-200 py-16 px-6 md:px-16 min-h-screen flex items-center justify-center">
+                <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+                >
+                    <motion.div variants={itemVariants} className="space-y-6">
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-[#00F0FF] to-[#30bac4] bg-clip-text text-transparent">
                             Let&apos;s connect
                         </h2>
                         <p className="text-slate-400 text-base md:text-lg max-w-md leading-relaxed">
@@ -84,7 +122,7 @@ export default function ContactSection() {
                         <p className="text-sm text-slate-400 font-medium">Choose your preferred way to reach us</p>
 
                         <div className="space-y-4 pt-2">
-                            <div className="flex items-center space-x-4">
+                            <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }} className="flex items-center space-x-4">
                                 <div className="w-10 h-10 rounded-lg bg-[#162032] flex items-center justify-center text-slate-300">
                                     <Mail className="w-5 h-5 text-slate-400" />
                                 </div>
@@ -94,18 +132,19 @@ export default function ContactSection() {
                                 >
                                     ictkalika82@gmail.com
                                 </a>
-                            </div>
+                            </motion.div>
 
-                            <div className="flex items-center space-x-4">
+                            <motion.div whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 300 }} className="flex items-center space-x-4">
                                 <div className="w-10 h-10 rounded-lg bg-[#162032] flex items-center justify-center text-slate-300">
                                     <MapPin className="w-5 h-5 text-slate-400" />
                                 </div>
                                 <span className="text-slate-300 text-sm md:text-base">Butwal, Nepal</span>
-                            </div>
+                            </motion.div>
                         </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="bg-[#121a2c]  rounded-2xl p-6 md:p-8 shadow-2xl relative">
+    
+                    <motion.div variants={itemVariants} className="bg-[#121a2c] rounded-2xl p-6 md:p-8 shadow-2xl relative border border-slate-800/50">
                         <form onSubmit={handleSubmit} className="space-y-5">
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -172,7 +211,9 @@ export default function ContactSection() {
                                 </span>
                             </div>
 
-                            <button
+                            <motion.button
+                                whileHover={{ scale: 1.015 }}
+                                whileTap={{ scale: 0.985 }}
                                 type="submit"
                                 disabled={loading}
                                 className="w-full py-3 px-6 rounded-lg font-semibold text-white bg-[#319097] hover:opacity-95 transition-opacity shadow-lg shadow-blue-500/10 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
@@ -188,25 +229,33 @@ export default function ContactSection() {
                                         <ArrowRight className="w-4 h-4 text-black/90 " />
                                     </>
                                 )}
-                            </button>
+                            </motion.button>
                         </form>
-                    </div>
+                    </motion.div>
 
-                </div>
+                </motion.div>
 
-                <button
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
                     onClick={scrollToTop}
                     aria-label="Scroll to top"
-                    className="fixed bottom-6 right-6 w-10 h-10 rounded-xl bg-[#162032] border border-slate-800 flex items-center justify-center text-slate-300 hover:bg-[#1f2b42] transition-colors shadow-lg cursor-pointer"
+                    className="fixed bottom-6 right-6 w-10 h-10 rounded-xl bg-[#162032] border border-slate-800 flex items-center justify-center text-slate-300 hover:bg-[#1f2b42] transition-colors shadow-lg cursor-pointer z-50"
                 >
                     <ChevronUp className="w-5 h-5" />
-                </button>
+                </motion.button>
             </section>
 
-            <section className="px-6 py-16 text-white">
+            <motion.section 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className="px-6 py-16 text-white"
+            >
                 <div className="mx-auto max-w-7xl">
                     <div className="mb-8 text-center">
-                        <h2 className="text-3xl font-bold md:text-4xl">
+                        <h2 className="text-3xl font-bold md:text-4xl text-[#00F0FF]">
                             Visit ICT Club of Kalika
                         </h2>
                         <p className="mt-3 text-gray-400">
@@ -239,7 +288,9 @@ export default function ContactSection() {
                                 Butwal, Rupandehi, Nepal.
                             </p>
 
-                            <a
+                            <motion.a
+                                whileHover={{ scale: 1.03 }}
+                                whileTap={{ scale: 0.97 }}
                                 href="https://www.google.com/maps/search/?api=1&query=Kalika+Manavgyan+Secondary+School+Butwal"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -247,11 +298,11 @@ export default function ContactSection() {
                             >
                                 Open in Google Maps
                                 <span aria-hidden="true">↗</span>
-                            </a>
+                            </motion.a>
                         </div>
                     </div>
                 </div>
-            </section>
+            </motion.section>
         </div>
     );
 }
