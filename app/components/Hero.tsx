@@ -30,7 +30,7 @@ const Hero = () => {
     return (
         <section className="min-h-screen bg-[#0B1120] text-[#ebe6e2] overflow-hidden">
 
-            <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-12 px-4 sm:px-6 pt-16 md:flex-row md:items-start md:gap-8 lg:gap-12">
+            <div className="mx-auto flex w-full max-w-7xl flex-col  items-end justify-between gap-12 px-4 sm:px-6 pt-16 md:flex-row md:items-start md:gap-8 lg:gap-12">
                 <motion.div
                     id="social-media"
                     className="order-3 md:order-1 flex w-full md:w-auto flex-row items-center justify-center gap-6 md:flex-col md:gap-8"
@@ -120,7 +120,7 @@ const Hero = () => {
 
                         <div className="absolute h-[190px] w-[190px] sm:h-[230px] sm:w-[230px] animate-[spin_8s_linear_infinite_reverse] rounded-full border border-dashed border-[#05F2DB]/20">
                             <div className="absolute -top-3 left-1/2 h-5 w-5 -translate-x-1/2 rounded-full bg-[#05F2DB] shadow-[0_0_20px_#05F2DB]" />
-                            <div className="absolute bottom-6 -right-3 h-2.5 w-2.5 rounded-full bg-cyan-200 shadow-[0_0_15px_#05F2DB]" />
+                            <div className="absolute bottom-6 left-8 h-2.5 w-2.5 rounded-full bg-cyan-200 shadow-[0_0_15px_#05F2DB]" />
                         </div>
 
                         <div className="relative h-32 w-32 sm:h-40 sm:w-40 overflow-hidden rounded-full border-2 border-[#05F2DB]/50 bg-[#0B1120] shadow-[0_0_35px_#05F2DB25]">
@@ -154,7 +154,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 35 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                    className="order-1 md:order-3 flex max-w-sm flex-col items-center text-center md:items-start md:text-left"
+                    className="order-1 md:order-3 flex max-w-sm flex-col text-center md:items-start md:text-left"
                 >
                     <h2 className="mt-2 text-2xl sm:text-3xl font-bold leading-tight">
                         Turning Ideas Into{" "}

@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from "framer-motion";
+import { foundationData, activities } from '@/data/activities';
 
 
 const containerVariants = {
@@ -36,95 +37,9 @@ const itemVariants = {
     },
 }
 
-interface FoundationCard {
-    id: string;
-    title: string;
-    icon: React.ReactNode;
-    description: string;
 
-}
 
-interface ActivityItem {
-    id: string;
-    title: string;
-    description: string;
-    image: string;
-    badge: string;
-}
 
-const foundationData: FoundationCard[] = [
-    {
-        id: 'mission',
-        title: 'Our Mission',
-        tagline: 'Empowering Through Tech',
-        icon: <Target className="w-14 h-14 text-[#00F0FF]" />,
-        description:
-            'To foster innovation, inspire creativity, and create a lasting impact through technology. We provide a platform for students to explore, learn, and excel in various fields of ICT while building a strong community of tech enthusiasts.',
-        accentGradient: 'from-[#00F0FF] to-[#059669]',
-    },
-    {
-        id: 'vision',
-        title: 'Our Vision',
-        tagline: 'Leading Digital Future',
-        icon: <Eye className="w-14 h-14 text-[#3B82F6]" />,
-        description: 'To be the leading technology club that empowers students to become innovative leaders in the digital world. We envision a future where our members contribute significantly to Nepal’s technological advancement and global tech community.',
-        accentGradient: 'from-[#2563EB] to-[#00F0FF]',
-    },
-    {
-        id: 'values',
-        title: 'Our Values',
-        tagline: 'Core Principles',
-        icon: <Award className="w-14 h-14 text-[#8B5CF6]" />,
-        description:
-            'Innovation, collaboration, excellence, and inclusivity. We believe in continuous learning, ethical technology use, and creating opportunities for all students regardless of their background or current skill level.',
-        accentGradient: 'from-[#8B5CF6] to-[#2563EB]',
-    },
-];
-
-export const activities: ActivityItem[] = [
-    {
-        id: 'workshops',
-        title: 'Workshops & Training',
-        description: 'Regular hands-on sessions on modern programming languages, web development, AI/ML, and emerging software technologies.',
-        image: "/workshop.png",
-        badge: 'Skill Building',
-    },
-    {
-        id: 'competitions',
-        title: 'Competitions & Hackathons',
-        description: 'Organizing and participating in competitive coding contests, intense hackathons, and regional tech challenges.',
-        image: "/competition.png",
-        badge: 'Competitive',
-    },
-    {
-        id: 'projects',
-        title: 'Project Development',
-        description: 'Collaborative real-world projects that solve actual problems while building production-ready engineering skills.',
-        image: "/project_development.png",
-        badge: 'Hands-on',
-    },
-    {
-        id: 'industry',
-        title: 'Industry Connections',
-        description: 'Exclusive networking events with tech professionals, alumni interactions, and guest lectures from industry leaders.',
-        image: "/users.png",
-        badge: 'Networking',
-    },
-    {
-        id: 'research',
-        title: 'Research & Innovation',
-        description: 'Supporting student-led research initiatives, experimental prototyping, and fostering an inventive engineering mindset.',
-        image: "/research.png",
-        badge: 'R&D',
-    },
-    {
-        id: 'community',
-        title: 'Community Outreach',
-        description: 'Tech awareness bootcamps, open-source workshops, and digital literacy initiatives empowering the local community.',
-        image: "/community.png",
-        badge: 'Impact',
-    },
-];
 
 const page = () => {
     return (
@@ -296,32 +211,32 @@ const page = () => {
                         </p>
                     </div>
 
-                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {foundationData.map((item) => (
-                <div 
-                    key={item.id}
-                    className="group relative rounded-2xl bg-[#121a2c]/80 border border-slate-800/80 p-8 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between overflow-hidden"
-                >
-              
-                    <div  className={`absolute top-0 left-0 h-1 bg-[#aaa] opacity-90 group-hover:opacity-100 transition-opacity duration-300 animate-fill-bar`}  />
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {foundationData.map((item) => (
+                            <div
+                                key={item.id}
+                                className="group relative rounded-2xl bg-[#121a2c]/80 border border-slate-800/80 p-8 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                            >
 
-                    <div className='relative'>
-                        <div className="w-full h-34 rounded-xl bg-[#182237] relative left-1/3 p-4 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 group-hover:border-[#00F0FF]/50 transition-all duration-300">
-                            {item.icon}
-                        </div>
+                                <div className={`absolute top-0 left-0 h-1 bg-[#aaa] opacity-90 group-hover:opacity-100 transition-opacity duration-300 animate-fill-bar`} />
 
-        
-                        <h3 className="text-2xl font-bold text-white mt-1 mb-4">
-                            {item.title}
-                        </h3>
+                                <div className='relative'>
+                                    <div className="w-full h-34 rounded-xl bg-[#182237] relative left-1/3 p-4 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 group-hover:border-[#00F0FF]/50 transition-all duration-300">
+                                        {item.icon}
+                                    </div>
 
-                        <p className="text-slate-400 text-sm md:text-base leading-relaxed relative z-10">
-                            {item.description}
-                        </p>
+
+                                    <h3 className="text-2xl font-bold text-white mt-1 mb-4">
+                                        {item.title}
+                                    </h3>
+
+                                    <p className="text-slate-400 text-sm md:text-base leading-relaxed relative z-10">
+                                        {item.description}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                </div>
-            ))}
-        </div>
                 </div>
             </section>
 

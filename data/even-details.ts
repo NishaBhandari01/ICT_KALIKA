@@ -121,7 +121,6 @@ export const eventDetailsData: Record<string, EventDetail> = {
             "/it_fest/it_fest3.png",
             "/it_fest/it_fest4.png",
             "/it_fest/it_fest5.png",
-
         ]
     },
 
