@@ -1,9 +1,6 @@
 
 import {
     Award, Eye, Target,
-    Users,
-    ArrowRight,
-    Calendar
 } from 'lucide-react';
 
 interface FoundationCard {
@@ -50,42 +47,42 @@ export const activities: ActivityItem[] = [
         id: 'workshops',
         title: 'Workshops & Training',
         description: 'Regular hands-on sessions on modern programming languages, web development, AI/ML, and emerging software technologies.',
-        image: "/workshop.png",
+        image: "/workshop1.png",
         badge: 'Skill Building',
     },
     {
         id: 'competitions',
         title: 'Competitions & Hackathons',
         description: 'Organizing and participating in competitive coding contests, intense hackathons, and regional tech challenges.',
-        image: "/competition.png",
+        image: "/competition1.png",
         badge: 'Competitive',
     },
     {
         id: 'projects',
         title: 'Project Development',
         description: 'Collaborative real-world projects that solve actual problems while building production-ready engineering skills.',
-        image: "/project_development.png",
+        image: "/project.png",
         badge: 'Hands-on',
     },
     {
         id: 'industry',
         title: 'Industry Connections',
         description: 'Exclusive networking events with tech professionals, alumni interactions, and guest lectures from industry leaders.',
-        image: "/users.png",
+        image: "/networking.png",
         badge: 'Networking',
     },
     {
         id: 'research',
         title: 'Research & Innovation',
         description: 'Supporting student-led research initiatives, experimental prototyping, and fostering an inventive engineering mindset.',
-        image: "/research.png",
+        image: "/research1.png",
         badge: 'R&D',
     },
     {
         id: 'community',
         title: 'Community Outreach',
         description: 'Tech awareness bootcamps, open-source workshops, and digital literacy initiatives empowering the local community.',
-        image: "/community.png",
+        image: "/community1.png",
         badge: 'Impact',
     },
 ];

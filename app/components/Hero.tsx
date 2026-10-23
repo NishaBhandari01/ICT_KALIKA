@@ -226,27 +226,27 @@ const Hero = () => {
 
             <div className="mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto px-4 pb-12 items-center">
                 <div className="flex flex-col items-center justify-center p-6 text-center transition-transform duration-300 hover:-translate-y-1">
-                    <div className="relative h-12 w-12 mb-2">
-                        <Image src="/users.png" alt="Active members" fill sizes="48px" className="object-contain" />
+                    <div className="relative h-16 w-16 mb-4">
+                        <Image src="/active-members.png" alt="Active members" fill sizes="48px" className="object-contain" />
                     </div>
                     <h3 className="text-2xl font-bold text-[#05F2DB]">83+</h3>
-                    <p className="mt-1 text-xs sm:text-sm text-gray-400 tracking-wider uppercase">Active Members</p>
+                    <p className="mt-1 text-xs sm:text-sm text-gray-400 tracking-wider font-semibold">Active Members</p>
                 </div>
 
                 <div className="flex flex-col items-center justify-centerp-6 text-center transition-transform duration-300 hover:-translate-y-1">
-                    <div className="relative h-12 w-12 mb-2">
-                        <Image src="/event.png" alt="Events held" fill sizes="48px" className="object-contain" />
+                    <div className="relative h-16 w-16 mb-4">
+                        <Image src="/calendar.png" alt="Events held" fill sizes="48px" className="object-contain" />
                     </div>
                     <h3 className="text-2xl font-bold text-[#05F2DB]">50+</h3>
-                    <p className="mt-1 text-xs sm:text-sm text-gray-400 tracking-wider uppercase">Events Held</p>
+                    <p className="mt-1 text-xs sm:text-sm text-gray-400 tracking-wider  font-semibold">Events Held</p>
                 </div>
 
                 <div className="flex flex-col items-center justify-center p-6 text-center transition-transform duration-300 hover:-translate-y-1">
-                    <div className="relative h-12 w-12 mb-2">
-                        <Image src="/impact.png" alt="Students impacted" fill sizes="48px" className="object-contain" />
+                    <div className="relative h-16 w-16 mb-4">
+                        <Image src="/goal.png" alt="Students impacted" fill sizes="48px" className="object-contain" />
                     </div>
                     <h3 className="text-2xl font-bold text-[#05F2DB]">500+</h3>
-                    <p className="mt-1 text-xs sm:text-sm text-gray-400 tracking-wider uppercase">Students Impacted</p>
+                    <p className="mt-1 text-xs sm:text-sm text-gray-400 tracking-wider font-semibold">Students Impacted</p>
                 </div>
             </div>
         </section>

@@ -9,16 +9,13 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { motion, Variants } from "framer-motion";
-import { Sparkles, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { foundationData, activities } from '@/data/activities';
 
 interface AboutHeroProps {
     containerVariants?: Variants;
     itemVariants?: Variants;
 }
-
-
-
 
 
 const AboutSection = ({ containerVariants,
@@ -41,8 +38,6 @@ const AboutSection = ({ containerVariants,
             transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
         },
     };
-
-
 
     const cardVariants: Variants = {
         hidden: { opacity: 0, y: 30 },
@@ -142,10 +137,14 @@ const AboutSection = ({ containerVariants,
                 </motion.div>
             </section>
 
-            <section className="relative overflow-hidden  px-6 py-20 text-slate-200 sm:py-24 md:px-16">
+            <section className="relative overflow-hidden px-6 py-20 text-slate-200 sm:py-24 md:px-16">
                 <div className="relative mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
-                    <div>
-
+                    <motion.div
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                    >
                         <h2 className="text-2xl font-extrabold leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl">
                             Why We{" "}
                             <span className="bg-[#05F2DB] bg-clip-text text-transparent">
@@ -160,13 +159,17 @@ const AboutSection = ({ containerVariants,
                             technology leaders.
                         </p>
 
-
                         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
-
-                            <div className="rounded-xl  bg-white/[0.03] p-5 transition-all duration-200 flex flex-col justify-center items-center  hover:bg-blue-500/[0.04]">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className="rounded-xl bg-white/[0.03] p-5 transition-all duration-200 flex flex-col justify-center items-center hover:bg-blue-500/[0.04]"
+                            >
                                 <div className="mb-5 flex h-24 w-24 items-center justify-center">
                                     <Image
-                                        src="/learn.png"
+                                        src="/learn1.png"
                                         alt="Learn and explore"
                                         width={86}
                                         height={86}
@@ -178,15 +181,21 @@ const AboutSection = ({ containerVariants,
                                     Learn & Explore
                                 </h3>
 
-                                <p className="mt-2 text-sm leading-6 text-slate-400">
+                                <p className="mt-2 text-sm leading-6 text-slate-400 text-center">
                                     Discover new technologies and develop practical skills beyond the classroom.
                                 </p>
-                            </div>
+                            </motion.div>
 
-                            <div className=" rounded-xl  bg-white/3 p-5 transition-all duration-200  flex flex-col justify-center items-center hover:bg-blue-500/4">
-                                <div className="mb-5 flex h-24 w-24 items-center justify-center ">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, margin: "-50px" }}
+                                transition={{ duration: 0.5, delay: 0.3 }}
+                                className="rounded-xl bg-white/3 p-5 transition-all duration-200 flex flex-col justify-center items-center hover:bg-blue-500/4"
+                            >
+                                <div className="mb-5 flex h-24 w-24 items-center justify-center">
                                     <Image
-                                        src="/built.png"
+                                        src="/programming.png"
                                         alt="Build and innovate"
                                         width={86}
                                         height={86}
@@ -198,18 +207,21 @@ const AboutSection = ({ containerVariants,
                                     Build & Innovate
                                 </h3>
 
-                                <p className="mt-2 text-sm leading-6 text-slate-400">
+                                <p className="mt-2 text-sm leading-6 text-slate-400 text-center">
                                     Collaborate on meaningful projects and transform creative ideas into reality.
                                 </p>
-                            </div>
+                            </motion.div>
                         </div>
-                    </div>
+                    </motion.div>
 
-
-                    <div className="relative">
-
-                        <div className="relative overflow-hidden rounded-3xl  bg-[#111a2c]/90 p-7 shadow-2xl shadow-black/20 sm:p-10">
-
+                    <motion.div
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                        className="relative"
+                    >
+                        <div className="relative overflow-hidden rounded-3xl bg-[#111a2c]/90 p-7 shadow-2xl shadow-black/20 sm:p-10">
                             <span className="text-3xl font-semibold text-[#05F2DB]">
                                 Our Story
                             </span>
@@ -233,70 +245,70 @@ const AboutSection = ({ containerVariants,
                                     real-world application.
                                 </p>
                             </div>
-
                         </div>
-                    </div>
+                    </motion.div>
+
                 </div>
             </section>
 
-            <section className="relative text-slate-200 py-24 px-6 md:px-16 overflow-hidden bg-[#070C18]">
+            <section className="relative overflow-hidden  px-6 py-24 text-slate-200 md:px-16">
+                <div className="relative mx-auto max-w-7xl z-10">
 
-
-                <div className="max-w-7xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-center max-w-2xl mx-auto mb-16 space-y-3"
+                        className="mx-auto mb-16 max-w-2xl text-center space-y-3"
                     >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 text-gray-500 text-xs font-semibold uppercase tracking-wider text-[#05F2DB]">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#05F2DB]">
                             <span>Core Pillars</span>
                         </div>
 
-                        <h2 className="text-3xl  md:text-4xl font-extrabold tracking-tight text-white">
+                        <h2 className="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
                             Our <span className="bg-gradient-to-r from-[#05F2DB] to-[#3bb6d5] bg-clip-text text-transparent">Foundation</span>
                         </h2>
 
-                        <p className="text-slate-400 text-base md:text-lg leading-relaxed">
+                        <p className="text-base text-slate-400 md:text-lg leading-relaxed">
                             The principles that guide our journey and shape our impact as a technology community.
                         </p>
                     </motion.div>
 
-
+    
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-50px" }}
-                        className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                        className="grid grid-cols-1 gap-8 md:grid-cols-3"
                     >
                         {foundationData.map((item) => (
                             <motion.div
                                 key={item.id}
                                 variants={cardVariants}
-                                className="group relative rounded-2xl bg-[#121a2c]/80 border border-slate-800/80 p-8 backdrop-blur-md transition-all duration-300 flex flex-col justify-between overflow-hidden hover:border-[#05F2DB]/40 "
+                                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-800/80 bg-[#121a2c]/80 p-8 backdrop-blur-md transition-all duration-300 hover:border-[#05F2DB]/40"
                             >
+                     
+                                <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#05F2DB] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                                <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#05F2DB] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                                    <div className='relative'>
-
-                                        <div className="w-full h-34 rounded-xl bg-[#182237] relative left-1/3 p-4 flex items-center justify-center mb-6 shadow-inner  group-hover:border-[#00F0FF]/50 transition-all duration-300">
-                                            {item.icon}
-                                        </div>
-
-                                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#05F2DB] transition-colors">
-                                            {item.title}
-                                        </h3>
-
-                                        <p className="text-slate-400 text-sm md:text-base leading-relaxed relative z-10">
-                                            {item.description}
-                                        </p>
+                                <div className="relative">
+                
+                                    <div className="relative mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-xl bg-[#182237] p-4 shadow-inner transition-all duration-300 group-hover:border-[#00F0FF]/50">
+                                        {item.icon}
                                     </div>
+
+                                    <h3 className="mb-3 text-2xl font-bold text-white transition-colors group-hover:text-[#05F2DB]">
+                                        {item.title}
+                                    </h3>
+
+                                    <p className="relative z-10 text-sm text-slate-400 md:text-base leading-relaxed">
+                                        {item.description}
+                                    </p>
+                                </div>
                             </motion.div>
                         ))}
                     </motion.div>
+
                 </div>
             </section>
 
@@ -355,47 +367,51 @@ const AboutSection = ({ containerVariants,
                 </div>
             </section>
 
-            <section className="relative  text-slate-200 py-24 px-6 md:px-16 overflow-hidden">
+      <section className="relative overflow-hidden px-6 py-24 text-slate-200 md:px-16">
+      <div className="relative mx-auto max-w-4xl z-10 text-center">
+        
+        {/* Main Card with Scale & Fade-up Animation */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95, y: 30 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="relative overflow-hidden rounded-3xl border border-slate-800/80 bg-[#121a2c]/80 p-8 shadow-2xl shadow-cyan-500/5 backdrop-blur-md md:p-14"
+        >
+          <div className="mb-2 inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-xs font-medium text-gray-500">
+            <span className="text-xl font-semibold">Get Involved</span>
+          </div>
 
-                <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <h2 className="mb-6 text-2xl font-extrabold tracking-tight text-white md:text-4xl leading-tight">
+            Join Us and <span className="bg-[#37deea] bg-clip-text text-transparent">Move Together</span>
+          </h2>
 
-                    <div className="rounded-3xl bg-[#121a2c]/80 border border-slate-800/80 p-8 md:p-14 backdrop-blur-md shadow-2xl shadow-cyan-500/5 relative overflow-hidden">
+          <p className="mx-auto mb-10 max-w-2xl text-base text-slate-400 md:text-lg leading-relaxed">
+            Ready to be part of something bigger? Explore our team, discover upcoming events, and see how you can contribute to our mission of technological innovation.
+          </p>
 
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full  text-xs font-medium text-gray-500 mb-2">
-                            <span className='font-semibold text-xl'>Get Involved</span>
-                        </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/team"
+              className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl bg-[#1b696f] px-7 py-3.5 font-semibold text-white transition-all duration-200 hover:opacity-95 cursor-pointer"
+            >
+              <Users className="h-4 w-4" />
+              <span>Meet Our Team</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
 
-                        <h2 className="text-2xl md:text-4xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                            Join Us and <span className="bg-[#37deea]  bg-clip-text text-transparent">Move Together</span>
-                        </h2>
+            <Link
+              href="/events"
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl border border-slate-700/80 bg-[#162032] px-7 py-3.5 font-semibold text-slate-200 transition-all duration-200 hover:bg-[#1f2b42] hover:border-slate-600 hover:text-white cursor-pointer"
+            >
+              <Calendar className="h-4 w-4 text-[#00F0FF]" />
+              <span>Explore Events</span>
+            </Link>
+          </div>
+        </motion.div>
 
-                        <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-                            Ready to be part of something bigger? Explore our team, discover upcoming events, and see how you can contribute to our mission of technological innovation.
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <Link
-                                href="/team"
-                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white bg-[#1b696f] hover:opacity-95 transition-all duration-200  cursor-pointer"
-                            >
-                                <Users className="w-4 h-4" />
-                                <span>Meet Our Team</span>
-                                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                            </Link>
-
-
-                            <Link
-                                href="/events"
-                                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-slate-200 bg-[#162032] border border-slate-700/80 hover:bg-[#1f2b42] hover:text-white hover:border-slate-600 transition-all duration-200 cursor-pointer"
-                            >
-                                <Calendar className="w-4 h-4 text-[#00F0FF]" />
-                                <span>Explore Events</span>
-                            </Link>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
+      </div>
+    </section>
         </div>
     )
 }
