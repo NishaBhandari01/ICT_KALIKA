@@ -220,6 +220,8 @@ export default function HomePage() {
 
       <MajorAchievements />
 
+      
+
       <section className=" px-6 py-16 text-white">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 text-center">
