@@ -138,7 +138,7 @@ const Hero = () => {
                                 <Image src="/rocket.png" alt="Rocket" width={20} height={20} className="h-5 w-5 object-contain" />
                             </div>
                             <div className="absolute left-0 top-1/2 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#05F2DB]/40 bg-[#0B1120] shadow-[0_0_15px_#05F2DB40]">
-                                <Image src="/innovation.png" alt="Innovation" width={20} height={20} className="h-5 w-5 object-contain" />
+                                <Image src="/inn.png" alt="Innovation" width={20} height={20} className="h-5 w-5 object-contain" />
                             </div>
                         </div>
 
