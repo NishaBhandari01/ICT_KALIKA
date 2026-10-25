@@ -56,58 +56,56 @@ export default function HomePage() {
     <div className="min-h-screen bg-[#0B1120]">
       <Hero />
 
-   <section className="relative overflow-hidden px-4 py-24 text-white md:px-8">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
+      <section className="relative overflow-hidden px-4 py-24 text-white md:px-8">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2">
 
-        <motion.div
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="space-y-6"
-        >
-          <div className="space-y-2">
-            <h2 className="text-2xl font-bold tracking-wide text-[#29abd6] md:text-3xl">
-              ICT CLUB OF KALIKA - Butwal&apos;s Leading IT Club
-            </h2>
-            <span className="inline-block text-sm font-semibold tracking-widest text-gray-600">
-              Innovate. Inspire. Impact.
-            </span>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="space-y-6"
+          >
+            <div className="space-y-2">
+              <h2 className="text-2xl font-bold tracking-wide text-[#f9fafa] md:text-3xl">
+                ICT CLUB OF KALIKA - Butwal&apos;s Leading IT Club
+              </h2>
 
-          <p className="text-sm leading-relaxed text-gray-300 md:text-base">
-            ICT Club of Kalika is Butwal&apos;s leading IT club and premier student-led technology organization. Founded in 2022 at Kalika Manavgyan Secondary School, we are a vibrant community of over 50 active members passionate about technology, innovation, and digital transformation across Nepal.
-          </p>
+            </div>
 
-          <p className="text-sm leading-relaxed text-gray-300 md:text-base">
-            Located in Rupandehi district, Lumbini Province, our club serves as the hub for IT education and innovation in Western Nepal. Through our flagship Digital Horizon program, we bring technology education to rural areas across Nepal, while organizing coding workshops, robotics training, AI sessions, and IT competitions throughout Butwal and beyond.
-          </p>
-        </motion.div>
+            <p className="text-sm leading-relaxed text-gray-300 md:text-base">
+              ICT Club of Kalika is Butwal&apos;s leading IT club and premier student-led technology organization. Founded in 2022 at Kalika Manavgyan Secondary School, we are a vibrant community of over 50 active members passionate about technology, innovation, and digital transformation across Nepal.
+            </p>
+
+            <p className="text-sm leading-relaxed text-gray-300 md:text-base">
+              Located in Rupandehi district, Lumbini Province, our club serves as the hub for IT education and innovation in Western Nepal. Through our flagship Digital Horizon program, we bring technology education to rural areas across Nepal, while organizing coding workshops, robotics training, AI sessions, and IT competitions throughout Butwal and beyond.
+            </p>
+          </motion.div>
 
 
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-          className="flex flex-col items-center space-y-4"
-        >
-          <div className="h-[300px] w-full overflow-hidden rounded-2xl border border-blue-900/50 bg-blue-950 shadow-2xl sm:h-[380px]">
-            <Image
-              src="/team.avif"
-              alt="ICT club of kalika installation"
-              width={600}
-              height={400}
-              className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-            />
-          </div>
-          <h3 className="text-xl font-semibold tracking-wide text-[#3bb6d5] uppercase text-center">
-            ICT Club of Kalika Installation 2025
-          </h3>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="flex flex-col items-center space-y-4"
+          >
+            <div className="h-[300px] w-full overflow-hidden rounded-2xl border border-blue-900/50 bg-blue-950 shadow-2xl sm:h-[380px]">
+              <Image
+                src="/team.avif"
+                alt="ICT club of kalika installation"
+                width={600}
+                height={400}
+                className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+            <h3 className="text-xl font-semibold tracking-wide text-[#106c81]  text-center">
+              ICT Club of Kalika Installation 2025
+            </h3>
+          </motion.div>
 
-      </div>
-    </section>
+        </div>
+      </section>
 
       <section className="relative  text-slate-200 py-24 px-6 md:px-16 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
@@ -115,7 +113,7 @@ export default function HomePage() {
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
 
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
-              What <span className=" bg-[#00F0FF] bg-clip-text text-transparent">We Do</span>
+              What We Do
             </h2>
 
             <p className="text-slate-400 text-base md:text-lg leading-relaxed">
@@ -127,48 +125,42 @@ export default function HomePage() {
             {activities.map((item) => (
               <div
                 key={item.id}
-                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-800/80 bg-[#121a2c]/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/30 hover:bg-[#121a2c] hover:shadow-2xl hover:shadow-cyan-500/10"
+                className="group relative flex flex-col overflow-hidden rounded-2xl  bg-[#121a2c]/80 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl "
               >
-                
-                <div className="relative flex items-start justify-between">
-        
-                  <div className="relative h-24 w-24 flex-shrink-0 overflow-hidden rounded-tl-2xl rounded-br-3xl border-b border-r border-slate-700/50 bg-[#182237] transition-colors duration-300 group-hover:border-cyan-500/40">
-                    {item.image ? (
+                <div className="relative flex h-52 items-center justify-center overflow-hidden bg-[#121a2c] p-5">
+
+                  {item.image ? (
+                    <div className="relative h-40 w-40 overflow-hidden ">
                       <Image
                         src={item.image}
                         alt={item.title ?? "Activity thumbnail"}
                         fill
-                        sizes="(max-width: 768px) 100vw, 96px"
-                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        sizes="(max-width: 768px) 80vw, (max-width: 1024px) 40vw, 240px"
+                        className="object-contain transition-transform duration-500 ease-out group-hover:scale-105"
                       />
-                    ) : (
-                      <div className="flex h-full w-full items-center justify-center text-slate-500 transition-colors group-hover:text-cyan-400">
-                        <ImageOff className="h-7 w-7 stroke-[1.5]" />
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Badge Tag */}
-                  {item.badge && (
-                    <div className="p-4">
-                      <span className="inline-flex items-center rounded-full border border-slate-700/60 bg-slate-800/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-slate-300 transition-colors duration-200 group-hover:border-cyan-500/30 group-hover:text-cyan-300">
-                        {item.badge}
-                      </span>
                     </div>
+                  ) : (
+                    <div className="relative flex h-40 w-40 items-center justify-center rounded-2xl border border-slate-700 bg-[#182237] text-slate-500">
+                      <ImageOff className="h-10 w-10 stroke-[1.5]" />
+                    </div>
+                  )}
+
+
+                  {item.badge && (
+                    <span className="absolute right-2 top-4 z-10 inline-flex items-center rounded-full bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#60A5FA] backdrop-blur-md">
+                      {item.badge}
+                    </span>
                   )}
                 </div>
 
-                {/* Card Body Content */}
-                <div className="flex flex-1 flex-col justify-between p-6 pt-4">
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-bold text-slate-100 transition-colors duration-200 group-hover:text-[#00F0FF]">
-                      {item.title}
-                    </h3>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="text-lg font-bold text-white ">
+                    {item.title}
+                  </h3>
 
-                    <p className="line-clamp-3 text-sm leading-relaxed text-slate-400 transition-colors duration-200 group-hover:text-slate-300">
-                      {item.description}
-                    </p>
-                  </div>
+                  <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-400 transition-colors duration-300 group-hover:text-slate-300">
+                    {item.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -181,7 +173,7 @@ export default function HomePage() {
         <div className="w-full max-w-3xl mx-auto space-y-4">
 
           <h3 className="text-xl md:text-2xl font-bold text-blue-100 text-center mb-8 tracking-wide">
-            Additional Programs in <span className="text-[#00F0FF]">Butwal</span>
+            Additional Programs in Butwal
           </h3>
 
           {programs.map((program, index) => {
@@ -220,13 +212,17 @@ export default function HomePage() {
 
       <MajorAchievements />
 
-      
-
-      <section className=" px-6 py-16 text-white">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="px-6 py-16 text-white"
+      >
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold md:text-4xl">
-              Visit <span className="text-[#05F2DB]">ICT Club</span>  of Kalika
+            <h2 className="text-3xl font-bold md:text-4xl text-white">
+              Visit ICT Club of Kalika
             </h2>
             <p className="mt-3 text-gray-400">
               Find us on Google Maps and plan your visit.
@@ -258,19 +254,21 @@ export default function HomePage() {
                 Butwal, Rupandehi, Nepal.
               </p>
 
-              <a
+              <motion.a
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
                 href="https://www.google.com/maps/search/?api=1&query=Kalika+Manavgyan+Secondary+School+Butwal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-[#4ea4cb] px-5 py-3 font-medium transition hover:bg-[#417993] "
+                className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-white text-[#2a8aba] px-5 py-3 font-medium transition "
               >
                 Open in Google Maps
                 <span aria-hidden="true">↗</span>
-              </a>
+              </motion.a>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
 
     </div>

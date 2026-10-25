@@ -23,21 +23,21 @@ export const foundationData: FoundationCard[] = [
     {
         id: 'mission',
         title: 'Our Mission',
-        icon: <Target className="w-14 h-14 text-[#00F0FF]" />,
+        icon: <Target className="w-28 h-28 text-[#106C81]" />,
         description: 'To foster innovation, inspire creativity, and create a lasting impact through technology. We provide a platform for students to explore, learn, and excel in various fields of ICT while building a strong community of tech enthusiasts.',
    
     },
     {
         id: 'vision',
         title: 'Our Vision',
-        icon: <Eye className="w-14 h-14 text-[#3B82F6]" />,
+        icon: <Eye className="w-28 h-28 text-[#106C81]" />,
         description: 'To be the leading technology club that empowers students to become innovative leaders in the digital world. We envision a future where our members contribute significantly to Nepal’s technological advancement and global tech community.',
      
     },
     {
         id: 'values',
         title: 'Our Values',
-        icon: <Award className="w-14 h-14 text-[#8B5CF6]" />,
+        icon: <Award className="w-28 h-28 text-[#106C81]" />,
         description: 'Innovation, collaboration, excellence, and inclusivity. We believe in continuous learning, ethical technology use, and creating opportunities for all students regardless of their background or current skill level.',
     },
 ];

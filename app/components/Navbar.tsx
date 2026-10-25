@@ -38,7 +38,7 @@ export default function Navbar() {
             className="h-10 w-10 shrink-0 object-contain sm:h-12 sm:w-12"
           />
 
-          <h1 className="truncate text-base font-bold tracking-tight text-[#05F2DB] sm:text-lg lg:text-xl">
+          <h1 className="truncate text-base font-bold tracking-tight text-[#fbfbfb] sm:text-lg lg:text-xl">
             ICT Club of Kalika
           </h1>
         </Link>
@@ -49,7 +49,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="whitespace-nowrap text-sm font-semibold text-[#ebe6e2] transition-colors duration-200 hover:text-[#05F2DB] xl:text-base"
+              className="whitespace-nowrap text-sm font-semibold text-[#ebe6e2] transition-colors duration-200 hover:text-[#106c81] xl:text-base"
             >
               {link.label}
             </Link>

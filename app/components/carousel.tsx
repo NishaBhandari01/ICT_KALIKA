@@ -40,7 +40,7 @@ export default function EventGalleryCarousel({
         {images.length > 1 && (
           <button
             onClick={previousSlide}
-            className="absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-slate-950/70 text-white border border-slate-700/80 transition-all duration-300 hover:bg-cyan-500 hover:text-black hover:border-cyan-400 opacity-90 group-hover:opacity-100 shadow-lg"
+            className="absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-slate-950/70 text-white border border-slate-700/80 transition-all duration-300 hover:bg-blue-600 hover:text-black "
             aria-label="Previous Image"
           >
             <ChevronLeft size={22} />
@@ -60,7 +60,7 @@ export default function EventGalleryCarousel({
 
           <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#080d1e]/80 to-transparent pointer-events-none" />
 
-          <div className="absolute top-4 right-4 z-10 px-3 py-1 rounded-full bg-slate-950/80 border border-slate-800 text-xs font-semibold text-cyan-400 backdrop-blur-md shadow-md">
+          <div className="absolute top-4 right-4 z-10 px-3 py-1 rounded-full bg-slate-950/80 border border-slate-800 text-xs font-semibold text-[#1157D5] backdrop-blur-md shadow-md">
             {currentIndex + 1} / {images.length}
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function EventGalleryCarousel({
         {images.length > 1 && (
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-slate-950/70 text-white border border-slate-700/80 transition-all duration-300 hover:bg-cyan-500 hover:text-black hover:border-cyan-400 opacity-90 group-hover:opacity-100 shadow-lg"
+            className="absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-slate-950/70 text-white border border-slate-700/80 transition-all duration-300 hover:bg-blue-600 hover:text-black "
             aria-label="Next Image"
           >
             <ChevronRight size={22} />

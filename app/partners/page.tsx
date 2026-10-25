@@ -17,10 +17,10 @@ import {
 
 
 const stats = [
-  { icon: <Users className="w-5 h-5 text-cyan-400" />, count: "7000+", label: "Students" },
-  { icon: <Award className="w-5 h-5 text-blue-400" />, count: "50+", label: "Years of Excellence" },
-  { icon: <Handshake className="w-5 h-5 text-indigo-400" />, count: "100%", label: "Alumni Success" },
-  { icon: <GraduationCap className="w-5 h-5 text-purple-400" />, count: "10+", label: "Academic Programs" },
+  { icon: <Users className="w-5 h-5 text-[#2a8aba]" />, count: "7000+", label: "Students" },
+  { icon: <Award className="w-5 h-5 text-[#2a8aba]" />, count: "50+", label: "Years of Excellence" },
+  { icon: <Handshake className="w-5 h-5 text-[#2a8aba]" />, count: "100%", label: "Alumni Success" },
+  { icon: <GraduationCap className="w-5 h-5 text-[#2a8aba]" />, count: "10+", label: "Academic Programs" },
 ];
 
 interface Benefit {
@@ -76,10 +76,7 @@ const Page = () => {
 
 
             <h2 className="text-2xl mt-20 sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white leading-tight">
-              Empowering Dreams,{" "}
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Anchored in Trust
-              </span>
+              Empowering Dreams,{" "}   Anchored in Trust
             </h2>
 
             <p className="text-gray-300 text-xs sm:text-base md:text-lg leading-relaxed max-w-2xl font-normal">
@@ -106,7 +103,7 @@ const Page = () => {
                 <span className="inline-block px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-widest text-gray-400 ">
                   Founding Partner
                 </span>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-wide text-[#00F0FF] uppercase">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold tracking-wide text-[#304488] uppercase">
                   Kalika Manavgyan Secondary School
                 </h2>
               </div>
@@ -136,7 +133,7 @@ const Page = () => {
                   href="https://kalikaschool.edu.np"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-cyan-600 hover:bg-cyan-500 text-white text-sm sm:text-base font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 transform hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-full bg-white text-[#2a8aba] text-sm sm:text-base font-semibold shadow-lg  transition-all duration-300 transform hover:-translate-y-0.5"
                 >
                   <span>Visit School Website</span>
                   <ExternalLink className="w-4 h-4" />
@@ -159,7 +156,7 @@ const Page = () => {
                 Partnership Benefits
               </h2>
               <p className="text-gray-400 text-xs sm:text-sm md:text-base">
-                How our strategic partnership with <span className="text-cyan-400 font-medium">Kalika Manavgyan Secondary School</span> empowers our members.
+                How our strategic partnership with <span className=" text-[#2a8aba] font-medium">Kalika Manavgyan Secondary School</span> empowers our members.
               </p>
             </motion.div>
 
@@ -171,19 +168,19 @@ const Page = () => {
                 return (
                   <div
                     key={idx}
-                    className={`group relative rounded-2xl p-6 sm:p-7 backdrop-blur-md border border-slate-800/80 transition-all duration-300 hover:-translate-y-1.5 shadow-xl flex flex-col justify-between ${isFeatured
+                    className={`group relative rounded-2xl p-6 sm:p-7 backdrop-blur-md  transition-all duration-300 hover:-translate-y-1.5 shadow-xl flex flex-col justify-between ${isFeatured
                       ? "md:col-span-2 bg-gradient-to-br from-[#0F172A] via-[#0F172A]/90 to-cyan-950/30"
                       : "col-span-1 bg-[#0F172A]/70 hover:bg-[#0F172A]/90"
                       }`}
                   >
                     {isFeatured && (
-                      <div className="absolute top-0 right-0 text-[10px] bg-cyan-950/80 border-b border-l border-cyan-500/30 py-1.5 px-3 sm:px-4 rounded-tr-2xl rounded-bl-2xl font-bold uppercase tracking-wider text-cyan-400">
+                      <div className="absolute top-0 right-0 text-[10px] bg-white text-[#2a8aba] py-1.5 px-3 sm:px-4 rounded-tr-2xl rounded-bl-2xl font-bold uppercase tracking-wider ">
                         Key Benefit
                       </div>
                     )}
 
                     <div className="space-y-4">
-                      <div className="relative h-18 w-18 rounded-xl bg-slate-900/80 border border-slate-800/80 p-2 overflow-hidden flex items-center justify-center shadow-md">
+                      <div className="relative h-18 w-18 rounded-xl  p-2 overflow-hidden flex items-center justify-center shadow-md">
                         <Image
                           src={benefit.imageSrc}
                           alt={benefit.title}
@@ -193,7 +190,7 @@ const Page = () => {
                         />
                       </div>
 
-                      <h3 className={`font-bold text-white group-hover:text-cyan-300 transition-colors text-lg sm:text-xl`}>
+                      <h3 className={`font-bold text-white  transition-colors text-lg sm:text-xl`}>
                         {benefit.title}
                       </h3>
 
@@ -207,7 +204,7 @@ const Page = () => {
             </div>
           </div>
 
-          <div className="relative rounded-3xl bg-[#0F172A]/90 to-slate-900/80 border border-blue-800/50 p-6 sm:p-8 md:p-12 text-center overflow-hidden shadow-2xl backdrop-blur-xl">
+          <div className="relative rounded-3xl bg-[#0F172A]/90 to-slate-900/80  p-6 sm:p-8 md:p-12 text-center overflow-hidden shadow-2xl backdrop-blur-xl">
             <div className="relative z-10 max-w-2xl mx-auto space-y-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-white">
                 Become Our Partner
@@ -220,7 +217,7 @@ const Page = () => {
               <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-cyan-400 hover:bg-cyan-500 text-slate-950 text-sm sm:text-base font-semibold shadow-lg shadow-cyan-500/25 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-white text-[#2a8aba] text-sm sm:text-base font-semibold shadow-lg shadow-cyan-500/25 transition-all duration-300"
                 >
                   <Mail className="w-4 h-4" />
                   <span>Contact Us</span>

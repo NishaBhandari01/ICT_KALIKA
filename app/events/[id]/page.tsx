@@ -35,7 +35,7 @@ export default function EventDetailPage() {
 
     if (!event) {
         return (
-            <div className="min-h-screen bg-[#080d1e] text-white flex flex-col items-center justify-center p-6 space-y-4">
+            <div className="min-h-screen bg-[#0B1120] text-white flex flex-col items-center justify-center p-6 space-y-4">
                 <h1 className="text-2xl font-bold text-red-400">Event Not Found</h1>
                 <p className="text-gray-400 text-sm">The event you are looking for does not exist or has been removed.</p>
                 <button
@@ -50,7 +50,7 @@ export default function EventDetailPage() {
     }
 
     return (
-        <main className="min-h-screen bg-[#080d1e] text-white py-12 px-4 md:px-8 relative overflow-hidden">
+        <main className="min-h-screen bg-[#0B1120] text-white py-12 px-4 md:px-8 relative overflow-hidden">
 
             <div className="max-w-5xl mx-auto space-y-10 relative z-10">
 
@@ -81,16 +81,16 @@ export default function EventDetailPage() {
                             </div>
                         </div>
 
-                        <div className="flex flex-col items-start justify-center md:justify-start gap-3 pt-2 text-xs sm:text-sm font-medium">
-                            <span className="flex items-center gap-6  text-cyan-600 ">
+                        <div className="flex flex-col items-start justify-center md:justify-start gap-3 pt-2 text-xs sm:text-sm font-medium text-[#1157d7]">
+                            <span className="flex items-center gap-6  ">
                                 <Calendar className="w-6 h-6 text-gray-400" />
                                 {event.date}
                             </span>
-                            <span className="flex items-center gap-6  text-cyan-600">
+                            <span className="flex items-center gap-6">
                                 <MapPin className="w-6 h-6 text-gray-400" />
                                 {event.location}
                             </span>
-                            <span className="flex items-center gap-6  text-cyan-600 ">
+                            <span className="flex items-center gap-6">
                                 <Users className="w-6 h-6 text-gray-400" />
                                 {event.participants}
                             </span>
@@ -108,7 +108,7 @@ export default function EventDetailPage() {
                             <ul className="space-y-3 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                                 {event.keyHighlights.map((highlight, index) => (
                                     <li key={index} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                                        <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                                        <CheckCircle2 className="w-4 h-4 text-[#1157d7] shrink-0 mt-0.5" />
                                         <span className="leading-snug">{highlight}</span>
                                     </li>
                                 ))}
@@ -118,7 +118,7 @@ export default function EventDetailPage() {
                         <div className="w-full h-[2px] bg-amber-50"></div>
 
                         <div className=" text-center">
-                            <span className="text-xs text-cyan-500 font-semibold">
+                            <span className="text-xs text-white font-semibold">
                                 ICT Club of Kalika {" - "} <span className="text-slate-400">Executive Tenure</span>
                             </span>
                         </div>

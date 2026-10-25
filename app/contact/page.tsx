@@ -98,7 +98,7 @@ export default function ContactSection() {
                 className="text-center max-w-2xl mx-auto space-y-4 pt-16 px-6"
             >
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white capitalize">
-                    We will be happy to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#05F2DB] to-[#3bb6d5]">listen to your idea</span>
+                    We will be happy to <span className="text-transparent bg-clip-text bg-[#2a8aba]">listen to your idea</span>
                 </h2>
         
             </motion.div>
@@ -112,7 +112,7 @@ export default function ContactSection() {
                     className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
                 >
                     <motion.div variants={itemVariants} className="space-y-6">
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-[#00F0FF] to-[#30bac4] bg-clip-text text-transparent">
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-white bg-clip-text text-transparent">
                             Let&apos;s connect
                         </h2>
                         <p className="text-slate-400 text-base md:text-lg max-w-md leading-relaxed">
@@ -128,7 +128,7 @@ export default function ContactSection() {
                                 </div>
                                 <a
                                     href="mailto:ictkalika82@gmail.com"
-                                    className="inline-flex items-center gap-2 rounded-lg py-3 text-white hover:text-[#00F0FF] transition-colors"
+                                    className="inline-flex items-center gap-2 rounded-lg py-3  text-[#2a8aba] transition-colors"
                                 >
                                     ictkalika82@gmail.com
                                 </a>
@@ -159,7 +159,7 @@ export default function ContactSection() {
                                         placeholder="Your name"
                                         value={formData.name}
                                         onChange={handleChange}
-                                        className="w-full bg-[#182237] border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#35787c] transition-colors"
+                                        className="w-full bg-[#182237] border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#2a8aba] transition-colors"
                                     />
                                 </div>
 
@@ -174,7 +174,7 @@ export default function ContactSection() {
                                         placeholder="you@example.com"
                                         value={formData.email}
                                         onChange={handleChange}
-                                        className="w-full bg-[#182237] border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#35787c] transition-colors"
+                                        className="w-full bg-[#182237] border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#2a8aba] transition-colors"
                                     />
                                 </div>
                             </div>
@@ -189,7 +189,7 @@ export default function ContactSection() {
                                     placeholder="+977 98XXXXXXXX"
                                     value={formData.phone}
                                     onChange={handleChange}
-                                    className="w-full bg-[#182237] border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#35787c] transition-colors"
+                                    className="w-full bg-[#182237] border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#2a8aba] transition-colors"
                                 />
                             </div>
 
@@ -204,7 +204,7 @@ export default function ContactSection() {
                                     placeholder="Your message here..."
                                     value={formData.message}
                                     onChange={handleChange}
-                                    className="w-full bg-[#182237] border border-slate-800 rounded-lg p-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#35787c] transition-colors resize-none"
+                                    className="w-full bg-[#182237] border border-slate-800 rounded-lg p-3 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-[#2a8aba] transition-colors resize-none"
                                 />
                                 <span className="absolute right-3 bottom-3 text-[11px] text-slate-500 pointer-events-none">
                                     {formData.message.length}/1000
@@ -216,7 +216,7 @@ export default function ContactSection() {
                                 whileTap={{ scale: 0.985 }}
                                 type="submit"
                                 disabled={loading}
-                                className="w-full py-3 px-6 rounded-lg font-semibold text-white bg-[#319097] hover:opacity-95 transition-opacity shadow-lg shadow-blue-500/10 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                className="w-full py-3 px-6 rounded-lg font-semibold bg-white text-[#2a8aba] hover:opacity-95 transition-opacity shadow-lg shadow-blue-500/10 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             >
                                 {loading ? (
                                     <>
@@ -226,7 +226,7 @@ export default function ContactSection() {
                                 ) : (
                                     <>
                                         <span>Send Message</span>
-                                        <ArrowRight className="w-4 h-4 text-black/90 " />
+                                        <ArrowRight className="w-4 h-4  " />
                                     </>
                                 )}
                             </motion.button>
@@ -255,7 +255,7 @@ export default function ContactSection() {
             >
                 <div className="mx-auto max-w-7xl">
                     <div className="mb-8 text-center">
-                        <h2 className="text-3xl font-bold md:text-4xl text-[#00F0FF]">
+                        <h2 className="text-3xl font-bold md:text-4xl text-white">
                             Visit ICT Club of Kalika
                         </h2>
                         <p className="mt-3 text-gray-400">
@@ -294,7 +294,7 @@ export default function ContactSection() {
                                 href="https://www.google.com/maps/search/?api=1&query=Kalika+Manavgyan+Secondary+School+Butwal"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-[#4ea4cb] px-5 py-3 font-medium transition hover:bg-[#417993]"
+                                className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-white text-[#2a8aba] px-5 py-3 font-medium transition "
                             >
                                 Open in Google Maps
                                 <span aria-hidden="true">↗</span>

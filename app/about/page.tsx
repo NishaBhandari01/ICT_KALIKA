@@ -5,7 +5,8 @@ import Image from 'next/image'
 import {
     Users,
     ArrowRight,
-    Calendar
+    Calendar,
+    ImageOff
 } from 'lucide-react';
 import Link from 'next/link';
 import { motion, Variants } from "framer-motion";
@@ -67,15 +68,15 @@ const AboutSection = ({ containerVariants,
                     initial={{ opacity: 0, x: -30, y: -20 }}
                     animate={{ opacity: 1, x: 0, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="absolute left-6 top-6 z-10 md:left-12 md:top-10"
+                    className="absolute left-6 top-40 z-10 md:left-12 md:top-10"
                 >
-                    <div className="rounded-2xl bg-[#0B1120]/60 p-2.5 backdrop-blur-md border border-white/10 shadow-xl hover:border-[#05F2DB]/40 transition-colors">
+                    <div className="">
                         <Image
                             src="/logo.avif"
                             alt="ICT Club logo"
                             width={90}
                             height={90}
-                            className="h-20 w-20 object-contain md:h-28 md:w-28"
+                            className="h-24 w-24 object-contain md:h-32 md:w-32"
                         />
                     </div>
                 </motion.div>
@@ -84,15 +85,15 @@ const AboutSection = ({ containerVariants,
                     initial={{ opacity: 0, x: 30, y: -20 }}
                     animate={{ opacity: 1, x: 0, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-                    className="absolute right-6 top-6 z-10 md:right-12 md:top-10"
+                    className="absolute right-6 top- z-10 md:right-12 md:top-10"
                 >
-                    <div className="rounded-2xl bg-[#0B1120]/60 p-2.5 backdrop-blur-md border border-white/10 shadow-xl hover:border-[#3bb6d5]/40 transition-colors">
+                    <div className="">
                         <Image
                             src="/school-logo.png"
                             alt="School logo"
                             width={90}
                             height={90}
-                            className="h-20 w-20 object-contain md:h-28 md:w-28"
+                            className="h-20 w-20 object-cover rounded-full md:h-28 md:w-28"
                         />
                     </div>
                 </motion.div>
@@ -105,14 +106,14 @@ const AboutSection = ({ containerVariants,
                     animate="visible"
                 >
                     <motion.div variants={defaultItem} className="flex justify-center">
-                        <span className="inline-flex items-center gap-2  bg-[#05F2DB]/5 px-4 py-1.5 text-xs sm:text-sm font-semibold tracking-wider text-[#05F2DB]  backdrop-blur-sm shadow-[0_0_20px_rgba(5,242,219,0.15)]">
+                        <span className=" text-sm sm:text-xl font-semibold tracking-wider text-[#304489] ">
                             Kalika Manavgyan Secondary School
                         </span>
                     </motion.div>
 
                     <motion.h1
                         variants={defaultItem}
-                        className="bg-gradient-to-r from-[#05F2DB] via-[#3bb6d5] to-[#2563EB] bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl md:text-5xl tracking-tight pb-2"
+                        className="bg-white bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl md:text-5xl tracking-tight pb-2"
                     >
                         ICT Club of Kalika
                     </motion.h1>
@@ -133,7 +134,7 @@ const AboutSection = ({ containerVariants,
                     className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-1 text-slate-400 text-xs tracking-widest uppercase"
                 >
                     <span>Scroll Down</span>
-                    <ChevronDown className="w-4 h-4 text-[#05F2DB]" />
+                    <ChevronDown className="w-4 h-4 text-[#2174EE]" />
                 </motion.div>
             </section>
 
@@ -146,10 +147,8 @@ const AboutSection = ({ containerVariants,
                         transition={{ duration: 0.6, ease: "easeOut" }}
                     >
                         <h2 className="text-2xl font-extrabold leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl">
-                            Why We{" "}
-                            <span className="bg-[#05F2DB] bg-clip-text text-transparent">
-                                Exist?
-                            </span>
+                            Why We Exist
+
                         </h2>
 
                         <p className="mt-8 text-base leading-8 text-slate-400 sm:text-lg">
@@ -165,7 +164,7 @@ const AboutSection = ({ containerVariants,
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5, delay: 0.2 }}
-                                className="rounded-xl bg-white/[0.03] p-5 transition-all duration-200 flex flex-col justify-center items-center hover:bg-blue-500/[0.04]"
+                                className="rounded-xl  p-5 transition-all duration-200 flex flex-col justify-center items-center "
                             >
                                 <div className="mb-5 flex h-24 w-24 items-center justify-center">
                                     <Image
@@ -191,7 +190,7 @@ const AboutSection = ({ containerVariants,
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ duration: 0.5, delay: 0.3 }}
-                                className="rounded-xl bg-white/3 p-5 transition-all duration-200 flex flex-col justify-center items-center hover:bg-blue-500/4"
+                                className="rounded-xl p-5 transition-all duration-200 flex flex-col justify-center items-center "
                             >
                                 <div className="mb-5 flex h-24 w-24 items-center justify-center">
                                     <Image
@@ -221,14 +220,14 @@ const AboutSection = ({ containerVariants,
                         transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                         className="relative"
                     >
-                        <div className="relative overflow-hidden rounded-3xl bg-[#111a2c]/90 p-7 shadow-2xl shadow-black/20 sm:p-10">
-                            <span className="text-3xl font-semibold text-[#05F2DB]">
+                        <div className="relative overflow-hidden rounded-3xl bg-[#e9e1e1] p-7 shadow-2xl shadow-black/20 sm:p-10">
+                            <span className="text-3xl font-semibold text-gray-600">
                                 Our Story
                             </span>
 
-                            <div className="mt-8 space-y-6 text-sm leading-7 text-slate-400 sm:text-base">
+                            <div className="mt-8 space-y-6 text-sm leading-7 text-slate-600 sm:text-base">
                                 <p>
-                                    Established in <span className="font-semibold text-white">2079</span>,
+                                    Established in 2079,
                                     the ICT Club of Kalika brings together technology enthusiasts,
                                     innovators, and future leaders to learn, create, and grow together.
                                 </p>
@@ -261,12 +260,9 @@ const AboutSection = ({ containerVariants,
                         transition={{ duration: 0.6 }}
                         className="mx-auto mb-16 max-w-2xl text-center space-y-3"
                     >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#05F2DB]">
-                            <span>Core Pillars</span>
-                        </div>
 
                         <h2 className="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
-                            Our <span className="bg-gradient-to-r from-[#05F2DB] to-[#3bb6d5] bg-clip-text text-transparent">Foundation</span>
+                            Our <span className="bg-white bg-clip-text text-transparent">Foundation</span>
                         </h2>
 
                         <p className="text-base text-slate-400 md:text-lg leading-relaxed">
@@ -274,7 +270,7 @@ const AboutSection = ({ containerVariants,
                         </p>
                     </motion.div>
 
-    
+
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
@@ -286,18 +282,16 @@ const AboutSection = ({ containerVariants,
                             <motion.div
                                 key={item.id}
                                 variants={cardVariants}
-                                className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-800/80 bg-[#121a2c]/80 p-8 backdrop-blur-md transition-all duration-300 hover:border-[#05F2DB]/40"
+                                className="group relative rounded-2xl bg-[#0F172A]/70 hover:bg-[#0F172A]/95  backdrop-blur-md transition-all duration-300 hover:-translate-y-2 shadow-xl p-5  flex flex-col justify-between overflow-hidden "
                             >
-                     
-                                <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#05F2DB] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
                                 <div className="relative">
-                
-                                    <div className="relative mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-xl bg-[#182237] p-4 shadow-inner transition-all duration-300 group-hover:border-[#00F0FF]/50">
+
+                                    <div className="relative mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-xl  p-4 shadow-inner transition-all duration-300 group-hover:border-[#00F0FF]/50">
                                         {item.icon}
                                     </div>
 
-                                    <h3 className="mb-3 text-2xl font-bold text-white transition-colors group-hover:text-[#05F2DB]">
+                                    <h3 className="mb-3 text-2xl font-bold text-white transition-colors ">
                                         {item.title}
                                     </h3>
 
@@ -317,8 +311,8 @@ const AboutSection = ({ containerVariants,
 
                     <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
 
-                        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white">
-                            What <span className=" bg-[#00F0FF] bg-clip-text text-transparent">We Do</span>
+                        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+                            What We Do
                         </h2>
 
                         <p className="text-slate-400 text-base md:text-lg leading-relaxed">
@@ -326,37 +320,44 @@ const AboutSection = ({ containerVariants,
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                         {activities.map((item) => (
                             <div
                                 key={item.id}
-                                className="group relative rounded-2xl bg-[#121a2c]/90 border border-slate-800/80 pt-0 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-700 hover:shadow-xl hover:shadow-cyan-500/10 flex flex-col justify-between overflow-hidden"
+                                className="group relative flex flex-col overflow-hidden rounded-2xl  bg-[#121a2c]/80 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl "
                             >
-                                <div className="relative flex items-center justify-between mb-6">
+                                <div className="relative flex h-52 items-center justify-center overflow-hidden bg-[#121a2c] p-5">
 
-                                    <div className="w-24 h-24 relative rounded-tl-xl rounded-br-3xl bg-[#182237] flex items-center p-2 justify-center overflow-hidden transition-all duration-300 border-r border-b border-slate-700/50">
-                                        {item.image ? (
+                                    {item.image ? (
+                                        <div className="relative h-40 w-40 overflow-hidden ">
                                             <Image
                                                 src={item.image}
-                                                alt={item.title ?? "Activity image"}
+                                                alt={item.title ?? "Activity thumbnail"}
                                                 fill
-                                                className="object-cover group-hover:scale-110 transition-transform duration-300"
+                                                sizes="(max-width: 768px) 80vw, (max-width: 1024px) 40vw, 240px"
+                                                className="object-contain transition-transform duration-500 ease-out group-hover:scale-105"
                                             />
-                                        ) : (""
-                                        )}
-                                    </div>
+                                        </div>
+                                    ) : (
+                                        <div className="relative flex h-40 w-40 items-center justify-center rounded-2xl border border-slate-700 bg-[#182237] text-slate-500">
+                                            <ImageOff className="h-10 w-10 stroke-[1.5]" />
+                                        </div>
+                                    )}
 
-                                    <span className="text-[11px] pr-5 font-semibold tracking-wide uppercase px-2.5 py-1 rounded-md text-slate-400 group-hover:text-slate-200 transition-colors">
-                                        {item.badge}
-                                    </span>
+                      
+                                    {item.badge && (
+                                        <span className="absolute right-2 top-4 z-10 inline-flex items-center rounded-full bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#60A5FA] backdrop-blur-md">
+                                            {item.badge}
+                                        </span>
+                                    )}
                                 </div>
 
-                                <div className="pb-7 pr-7">
-                                    <h3 className="text-xl font-bold text-white mb-2.5 pl-7 group-hover:text-[#00F0FF] transition-colors duration-200">
+                                <div className="flex flex-1 flex-col p-6">
+                                    <h3 className="text-lg font-bold text-white ">
                                         {item.title}
                                     </h3>
 
-                                    <p className="text-slate-400 text-sm leading-relaxed pl-7">
+                                    <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-400 transition-colors duration-300 group-hover:text-slate-300">
                                         {item.description}
                                     </p>
                                 </div>
@@ -367,51 +368,50 @@ const AboutSection = ({ containerVariants,
                 </div>
             </section>
 
-      <section className="relative overflow-hidden px-6 py-24 text-slate-200 md:px-16">
-      <div className="relative mx-auto max-w-4xl z-10 text-center">
-        
-        {/* Main Card with Scale & Fade-up Animation */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 30 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-3xl border border-slate-800/80 bg-[#121a2c]/80 p-8 shadow-2xl shadow-cyan-500/5 backdrop-blur-md md:p-14"
-        >
-          <div className="mb-2 inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-xs font-medium text-gray-500">
-            <span className="text-xl font-semibold">Get Involved</span>
-          </div>
+            <section className="relative overflow-hidden px-6 py-24 text-slate-200 md:px-16">
+                <div className="relative mx-auto max-w-4xl z-10 text-center">
 
-          <h2 className="mb-6 text-2xl font-extrabold tracking-tight text-white md:text-4xl leading-tight">
-            Join Us and <span className="bg-[#37deea] bg-clip-text text-transparent">Move Together</span>
-          </h2>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="relative overflow-hidden rounded-3xl border-1 border-gray-600 bg-[#121a2c]/80 p-8 shadow-2xl  md:p-14"
+                    >
+                        <div className="mb-2 inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-xs font-medium text-gray-500">
+                            <span className="text-xl font-semibold">Get Involved</span>
+                        </div>
 
-          <p className="mx-auto mb-10 max-w-2xl text-base text-slate-400 md:text-lg leading-relaxed">
-            Ready to be part of something bigger? Explore our team, discover upcoming events, and see how you can contribute to our mission of technological innovation.
-          </p>
+                        <h2 className="mb-6 text-2xl font-extrabold tracking-tight text-white md:text-4xl leading-tight">
+                            Join Us and Move Together
+                        </h2>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/team"
-              className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl bg-[#1b696f] px-7 py-3.5 font-semibold text-white transition-all duration-200 hover:opacity-95 cursor-pointer"
-            >
-              <Users className="h-4 w-4" />
-              <span>Meet Our Team</span>
-              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-            </Link>
+                        <p className="mx-auto mb-10 max-w-2xl text-base text-slate-400 md:text-lg leading-relaxed">
+                            Ready to be part of something bigger? Explore our team, discover upcoming events, and see how you can contribute to our mission of technological innovation.
+                        </p>
 
-            <Link
-              href="/events"
-              className="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl border border-slate-700/80 bg-[#162032] px-7 py-3.5 font-semibold text-slate-200 transition-all duration-200 hover:bg-[#1f2b42] hover:border-slate-600 hover:text-white cursor-pointer"
-            >
-              <Calendar className="h-4 w-4 text-[#00F0FF]" />
-              <span>Explore Events</span>
-            </Link>
-          </div>
-        </motion.div>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <Link
+                                href="/team"
+                                className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl bg-white text-[#2a8aba] px-7 py-3.5 font-semibold  transition-all duration-200 hover:opacity-95 cursor-pointer"
+                            >
+                                <Users className="h-4 w-4" />
+                                <span>Meet Our Team</span>
+                                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                            </Link>
 
-      </div>
-    </section>
+                            <Link
+                                href="/events"
+                                className="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl border border-slate-700/80 bg-[#162032] px-7 py-3.5 font-semibold text-slate-200 transition-all duration-200 hover:bg-[#1f2b42] hover:border-slate-600 hover:text-white cursor-pointer"
+                            >
+                                <Calendar className="h-4 w-4 " />
+                                <span>Explore Events</span>
+                            </Link>
+                        </div>
+                    </motion.div>
+
+                </div>
+            </section>
         </div>
     )
 }

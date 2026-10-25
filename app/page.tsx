@@ -1,5 +1,6 @@
 import HomePage from "@/app/components/HomePage"
 import { Metadata } from "next"
+import Snowfall from "@/app/components/snowfall";
 
 export const metadata: Metadata = {
   title: 'ICT Club of Kalika - Student led IT Club',

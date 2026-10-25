@@ -4,6 +4,7 @@ import Script from "next/script";
 import { Montserrat } from "next/font/google";
 import ClientLayout from "./clientLayout";
 import "./globals.css";
+import Snowfall from "./components/snowfall";
 
 export const metadata = {
   title: {
@@ -119,10 +120,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-        <ClientLayout>
-          {children}
-        </ClientLayout>
+      <body
+        className={`${montserrat.className} relative min-h-screen bg-[#0B1120]`}
+      >
+        <Snowfall />
+        <div className="relative z-10">
+          <ClientLayout>
+            {children}
+          </ClientLayout>
+        </div>
+
 
         <Script
           async

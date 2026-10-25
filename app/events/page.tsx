@@ -58,7 +58,7 @@ const IctKalikaNetwork = () => {
 
     return (
         <div className='bg-[#0B1120]'>
-            <section className="mb-10 text-[#ebe6e2] px-4 py-20 overflow-hidden bg-[#070C18]">
+            <section className="mb-10 text-[#ebe6e2] px-4 py-20 overflow-hidden bg-[#0B1120]">
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
@@ -66,7 +66,7 @@ const IctKalikaNetwork = () => {
                     viewport={{ once: true, margin: "-100px" }}
                     className="relative w-full max-w-4xl mx-auto min-h-[auto] md:min-h-[450px] flex flex-col md:flex-row items-center justify-center p-4 text-white rounded-2xl"
                 >
-                    {/* Connecting SVG Lines (Desktop) */}
+            
                     <svg className="absolute inset-0 w-full h-full pointer-events-none hidden md:block"
                         viewBox="0 0 800 600"
                         fill="none"
@@ -74,49 +74,48 @@ const IctKalikaNetwork = () => {
                     >
                         <path
                             d="M 400 300 C 380 200, 280 140, 220 140"
-                            stroke="#05F2DB"
+                            stroke="#FFFFFF"
                             strokeWidth="1.5"
                             strokeDasharray="4 4"
                             className="opacity-40"
                         />
                         <path
                             d="M 400 300 C 400 220, 400 130, 400 90"
-                            stroke="#05F2DB"
+                            stroke="#FFFFFF"
                             strokeWidth="1.5"
                             strokeDasharray="4 4"
                             className="opacity-40"
                         />
                         <path
                             d="M 400 300 C 420 200, 520 140, 580 140"
-                            stroke="#05F2DB"
+                            stroke="#FFFFFF"
                             strokeWidth="1.5"
                             strokeDasharray="4 4"
                             className="opacity-40"
                         />
                         <path
                             d="M 400 300 C 300 350, 220 400, 220 440"
-                            stroke="#05F2DB"
+                            stroke="#FFFFFF"
                             strokeWidth="1.5"
                             strokeDasharray="4 4"
                             className="opacity-40"
                         />
                         <path
                             d="M 400 300 C 400 380, 400 440, 400 480"
-                            stroke="#05F2DB"
+                            stroke="#FFFFFF"
                             strokeWidth="1.5"
                             strokeDasharray="4 4"
                             className="opacity-40"
                         />
                         <path
                             d="M 400 300 C 500 350, 580 400, 580 440"
-                            stroke="#05F2DB"
+                            stroke="#FFFFFF"
                             strokeWidth="1.5"
                             strokeDasharray="4 4"
                             className="opacity-40"
                         />
                     </svg>
 
-                    {/* Mobile Layout */}
                     <div className="flex md:hidden flex-col items-center gap-5 w-full py-6">
                         <motion.div variants={topNodeVariants} className="flex flex-wrap justify-center gap-3 w-full">
                             <NodeCard label="Community" icon={<Users className="w-4 h-4" />} />
@@ -157,12 +156,7 @@ const IctKalikaNetwork = () => {
                         </motion.div>
 
                         <motion.div variants={centerLogoVariants} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                            <div className="relative h-44 w-44 overflow-hidden rounded-full bg-[#0B1120] border-2 border-[#05F2DB]/70 flex items-center justify-center ">
-                                <motion.div
-                                    animate={{ rotate: 360 }}
-                                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                                    className="absolute inset-2 rounded-full border border-dashed border-[#05F2DB]/30 pointer-events-none"
-                                />
+                            <div className="relative h-44 w-44 overflow-hidden rounded-full bg-[#0B1120]  flex items-center justify-center ">
                                 <Image
                                     src="/logo.avif"
                                     alt="ICT Club of Kalika logo"
@@ -193,7 +187,7 @@ const IctKalikaNetwork = () => {
                 <div className="max-w-7xl mx-auto space-y-26 relative z-10">
 
                     <div className="flex flex-col items-center gap-4 text-center">
-                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                        <h2 className="text-3xl font-bold  tracking-tight sm:text-3xl md:text-4xl">
                             Events Organized by ICT Club of Kalika
                         </h2>
 
@@ -204,9 +198,8 @@ const IctKalikaNetwork = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {clubEvents.map((event) => (
-                            <div
-                                key={event.id}
-                                className="group relative rounded-2xl bg-[#0F172A]/70 hover:bg-[#0F172A]/95  backdrop-blur-md transition-all duration-300 hover:-translate-y-2 shadow-xl  flex flex-col justify-between overflow-hidden"
+                            <div key={event.id}
+                                className="group relative rounded-2xl bg-[#0F172A]/70 hover:bg-[#0F172A]/95  backdrop-blur-md transition-all duration-300 hover:-translate-y-2 shadow-xl   flex flex-col justify-between overflow-hidden"
                             >
                                 <div>
 
@@ -226,7 +219,7 @@ const IctKalikaNetwork = () => {
 
 
                                     <div className="p-6 space-y-4">
-                                        <h3 className="text-xl font-bold capitalize text-white group-hover:text-cyan-300 transition-colors leading-snug">
+                                        <h3 className="text-xl font-bold capitalize text-white  transition-colors leading-snug">
                                             {event.title}
                                         </h3>
 
@@ -248,7 +241,7 @@ const IctKalikaNetwork = () => {
                                 </div>
 
                                 <div className="px-6 pb-6 pt-0">
-                                    <div onClick={() => router.push(`/events/${event.id}`)} className="w-full flex items-center justify-between pt-4  text-xs font-semibold text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                                    <div onClick={() => router.push(`/events/${event.id}`)} className="w-full flex items-center justify-between pt-4  text-xs font-semibold text-[#1157D7] transition-colors">
                                         <span>View Details</span>
                                         <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                                     </div>
@@ -268,13 +261,11 @@ export default IctKalikaNetwork
 
 const NodeCard: React.FC<NodeCardProps> = ({ label, icon }) => {
     return (
-        <div
-            className="flex items-center gap-3 px-5 py-3 rounded-full bg-[#0B1120]/90 border border-[#05F2DB]/30  backdrop-blur-md cursor-pointer  hover:border-[#05F2DB] transition-all duration-300"
-        >
-            <div className="w-8 h-8 rounded-lg  flex items-center justify-center text-[#05F2DB] ">
+        <div  className="flex items-center gap-1 px-4 py-2 rounded-full bg-white  backdrop-blur-md cursor-pointer  transition-all duration-300">
+            <div className="w-8 h-8 rounded-lg  flex items-center justify-center text-[#2a8aba] ">
                 {icon}
             </div>
-            <span className="text-sm font-semibold tracking-wide text-white group-hover:text-[#05F2DB] transition-colors">
+            <span className="text-sm font-semibold tracking-wide text-[#2a8aba]  transition-colors">
                 {label}
             </span>
         </div>

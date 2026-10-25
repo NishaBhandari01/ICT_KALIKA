@@ -5,7 +5,7 @@ import { Mail, MapPin, Phone, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-[#1a1b1b] bg-[#0B1120] text-[#ebe6e2]">
+    <footer className="relative overflow-hidden border-t border-slate-900 bg-[#0B1120] text-[#ebe6e2]">
       <div className="relative mx-auto max-w-7xl px-6 py-14 sm:px-8 sm:py-16">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-10">
 
@@ -26,7 +26,7 @@ export default function Footer() {
               </div>
 
               <div>
-                <h2 className="text-lg font-extrabold tracking-wide text-[#05F2DB]">
+                <h2 className="text-lg font-extrabold tracking-wide text-white">
                   ICT Club of  Kalika
                 </h2>
               </div>
@@ -133,7 +133,7 @@ export default function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="group inline-flex items-center gap-1 transition-colors duration-200 hover:text-[#05F2DB]"
+                    className="group inline-flex items-center gap-1 transition-colors duration-200 hover:text-[#1157D5]"
                   >
                     {item.label}
                     <ArrowUpRight
@@ -155,38 +155,36 @@ export default function Footer() {
 
               <div className="flex items-start gap-3">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ">
-                  <MapPin size={24} className="text-[#05F2DB]" />
+                  <MapPin size={18} className="text-[#EBE6E2]" />
                 </div>
                 <div className="pt-1">
-                  <p className="text-xs text-slate-500">Location</p>
+                  <p className="text-xs font-semibold text-slate-500">Location</p>
                   <p className="mt-1 text-slate-300">Butwal, Nepal</p>
                 </div>
               </div>
 
               <a
                 href="mailto:ictkalika82@gmail.com"
-                className="group flex items-start gap-3 transition-colors hover:text-[#05F2DB]"
+                className="group flex items-start gap-3 transition-colors hover:text-[#1157D5]"
               >
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ">
-                  <Mail size={24} className="text-[#05F2DB]" />
+                  <Mail size={18} className="text-[#EBE6E2]" />
                 </div>
                 <div className="min-w-0 pt-1">
-                  <p className="text-xs text-slate-500">Email</p>
-
+                  <p className="text-xs font-semibold text-slate-500">Email</p>
                   <p>ictkalika82@gmail.com</p>
-
                 </div>
               </a>
 
               <a
                 href="tel:+9779748703502"
-                className="group flex items-start gap-3 transition-colors hover:text-[#05F2DB]"
+                className="group flex items-start gap-3 transition-colors hover:text-[#1157D5]"
               >
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ">
-                  <Phone size={24} className="text-[#05F2DB]" />
+                  <Phone size={18} className="text-[#EBE6E2]" />
                 </div>
-                <div className="pt-1">
-                  <p className="text-xs text-slate-500">Phone</p>
+                <div className="min-w-0 pt-1">
+                  <p className="text-xs font-semibold text-slate-500">Phone</p>
                   <p className="mt-1 text-slate-300">+977 9748703502</p>
                 </div>
               </a>
