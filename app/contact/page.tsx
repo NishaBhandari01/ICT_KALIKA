@@ -98,7 +98,7 @@ export default function ContactSection() {
                 className="text-center max-w-2xl mx-auto space-y-4 pt-16 px-6"
             >
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white capitalize">
-                    We will be happy to <span className="text-transparent bg-clip-text bg-[#2a8aba]">listen to your idea</span>
+                    We will be happy to <span className="text-[#2a8aba]">listen to your idea</span>
                 </h2>
         
             </motion.div>
@@ -112,7 +112,7 @@ export default function ContactSection() {
                     className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
                 >
                     <motion.div variants={itemVariants} className="space-y-6">
-                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-white bg-clip-text text-transparent">
+                        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
                             Let&apos;s connect
                         </h2>
                         <p className="text-slate-400 text-base md:text-lg max-w-md leading-relaxed">

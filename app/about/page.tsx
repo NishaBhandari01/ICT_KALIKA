@@ -115,7 +115,7 @@ const AboutSection = ({ containerVariants,
 
                     <motion.h1
                         variants={defaultItem}
-                        className="bg-white bg-clip-text pb-2 text-3xl font-extrabold tracking-tight text-transparent sm:text-4xl md:text-5xl"
+                        className="text-white pb-2 text-3xl font-extrabold tracking-tight  sm:text-4xl md:text-5xl"
                     >
                         ICT Club of Kalika
                     </motion.h1>
@@ -267,7 +267,7 @@ const AboutSection = ({ containerVariants,
                     >
 
                         <h2 className="text-3xl font-extrabold tracking-tight text-white md:text-4xl">
-                            Our <span className="bg-white bg-clip-text text-transparent">Foundation</span>
+                            Our Foundation
                         </h2>
 
                         <p className="text-base text-slate-400 md:text-lg leading-relaxed">

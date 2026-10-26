@@ -261,7 +261,7 @@ export default IctKalikaNetwork
 
 const NodeCard: React.FC<NodeCardProps> = ({ label, icon }) => {
     return (
-        <div  className="flex items-center gap-1 px-4 py-2 rounded-full bg-white  backdrop-blur-md cursor-pointer  transition-all duration-300">
+        <div  className="flex items-center gap-1 px-4 py-2 rounded-full bg-white  cursor-pointer  transition-all duration-300">
             <div className="w-8 h-8 rounded-lg  flex items-center justify-center text-[#2a8aba] ">
                 {icon}
             </div>
