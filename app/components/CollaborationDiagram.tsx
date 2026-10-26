@@ -61,7 +61,7 @@ export default function CollaborationDiagram() {
                         </motion.div>
 
 
-                        <motion.div variants={itemVariants} whileHover={{ scale: 1.03, x: 5 }} className="flex items-center gap-3 bg-white text-[#2a8aba]bg-white text-[#2a8aba] px-6 py-3 rounded-full shadow-lg w-64 backdrop-blur-md">
+                        <motion.div variants={itemVariants} whileHover={{ scale: 1.03, x: 5 }} className="flex items-center gap-3 bg-white  text-[#2a8aba] px-6 py-3 rounded-full shadow-lg w-64 backdrop-blur-md">
                             <div className="w-8 h-8 rounded-full  flex items-center justify-center ">
                                 <Settings className="w-4 h-4" />
                             </div>
@@ -103,28 +103,28 @@ export default function CollaborationDiagram() {
                     <div className="lg:col-span-4 flex flex-col gap-6 items-center lg:items-end">
                         <motion.div variants={itemVariants} whileHover={{ scale: 1.03, x: -5 }} className="flex items-center justify-end gap-3 bg-white text-[#2a8aba] px-6 py-3 rounded-full shadow-lg w-64 backdrop-blur-md">
                             <span className="text-sm font-semibold tracking-wide ">Funding</span>
-                            <div className="w-8 h-8 rounded-full bg-[#05F2DB]/10 flex items-center justify-center ">
+                            <div className="w-8 h-8  flex items-center justify-center ">
                                 <Coins className="w-4 h-4" />
                             </div>
                         </motion.div>
 
                         <motion.div variants={itemVariants} whileHover={{ scale: 1.03, x: -5 }} className="flex items-center justify-end gap-3 bg-white text-[#2a8aba] px-6 py-3 rounded-full shadow-lg w-64 backdrop-blur-md">
                             <span className="text-sm font-semibold tracking-wide ">Tools & Technology</span>
-                            <div className="w-8 h-8 rounded-full bg-[#05F2DB]/10 flex items-center justify-center ">
+                            <div className="w-8 h-8  flex items-center justify-center ">
                                 <Laptop className="w-4 h-4" />
                             </div>
                         </motion.div>
 
                         <motion.div variants={itemVariants} whileHover={{ scale: 1.03, x: -5 }} className="flex items-center justify-end gap-3 bg-white text-[#2a8aba] px-6 py-3 rounded-full shadow-lg w-64 backdrop-blur-md">
                             <span className="text-sm font-semibold tracking-wide ">Industry Experience</span>
-                            <div className="w-8 h-8 rounded-full bg-[#05F2DB]/10 flex items-center justify-center ">
+                            <div className="w-8 h-8  flex items-center justify-center ">
                                 <Factory className="w-4 h-4" />
                             </div>
                         </motion.div>
 
                         <motion.div variants={itemVariants} whileHover={{ scale: 1.03, x: -5 }} className="flex items-center justify-end gap-3 bg-white text-[#2a8aba] px-6 py-3 rounded-full shadow-lg w-64 backdrop-blur-md">
                             <span className="text-sm font-semibold tracking-wide ">Mentorship</span>
-                            <div className="w-8 h-8 rounded-full bg-[#05F2DB]/10 flex items-center justify-center ">
+                            <div className="w-8 h-8  flex items-center justify-center ">
                                 <Users className="w-4 h-4" />
                             </div>
                         </motion.div>

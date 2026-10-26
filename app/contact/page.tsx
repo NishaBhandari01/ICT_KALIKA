@@ -91,7 +91,7 @@ export default function ContactSection() {
 
     return (
         <div className="bg-[#0B1120] overflow-hidden">
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
@@ -100,11 +100,11 @@ export default function ContactSection() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white capitalize">
                     We will be happy to <span className="text-[#2a8aba]">listen to your idea</span>
                 </h2>
-        
+
             </motion.div>
 
             <section className="relative text-slate-200 py-16 px-6 md:px-16 min-h-screen flex items-center justify-center">
-                <motion.div 
+                <motion.div
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -143,7 +143,7 @@ export default function ContactSection() {
                         </div>
                     </motion.div>
 
-    
+
                     <motion.div variants={itemVariants} className="bg-[#121a2c] rounded-2xl p-6 md:p-8 shadow-2xl relative border border-slate-800/50">
                         <form onSubmit={handleSubmit} className="space-y-5">
 
@@ -216,7 +216,7 @@ export default function ContactSection() {
                                 whileTap={{ scale: 0.985 }}
                                 type="submit"
                                 disabled={loading}
-                                className="w-full py-3 px-6 rounded-lg font-semibold bg-white text-[#2a8aba] hover:opacity-95 transition-opacity shadow-lg shadow-blue-500/10 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                className="w-full appearance-none py-3 px-6 rounded-lg font-semibold !bg-white active:!bg-white text-[#2a8aba] hover:opacity-95 transition-opacity shadow-lg shadow-blue-500/10 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             >
                                 {loading ? (
                                     <>
@@ -226,7 +226,7 @@ export default function ContactSection() {
                                 ) : (
                                     <>
                                         <span>Send Message</span>
-                                        <ArrowRight className="w-4 h-4  " />
+                                        <ArrowRight className="w-4 h-4" />
                                     </>
                                 )}
                             </motion.button>
@@ -246,7 +246,7 @@ export default function ContactSection() {
                 </motion.button>
             </section>
 
-            <motion.section 
+            <motion.section
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -294,7 +294,7 @@ export default function ContactSection() {
                                 href="https://www.google.com/maps/search/?api=1&query=Kalika+Manavgyan+Secondary+School+Butwal"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="mt-6 inline-flex w-fit items-center gap-2 rounded-lg bg-white text-[#2a8aba] px-5 py-3 font-medium transition "
+                                className="mt-6 inline-flex w-fit appearance-none items-center gap-2 rounded-lg !bg-white active:!bg-white text-[#2a8aba] px-5 py-3 font-medium transition"
                             >
                                 Open in Google Maps
                                 <span aria-hidden="true">↗</span>
