@@ -35,7 +35,7 @@ export default function CollaborationDiagram() {
             >
 
                 <motion.div variants={itemVariants} className="mb-14">
-                    <span className="inline-block px-6 py-2.5 rounded-full bg-white text-[#2a8aba] font-bold text-sm tracking-wider ">
+                    <span className="inline-block px-6 py-2.5 rounded-full  text-[#2a8aba] font-bold text-sm tracking-wider ">
                         Our Partners
                     </span>
                 </motion.div>

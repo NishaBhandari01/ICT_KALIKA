@@ -60,7 +60,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setMobileNavOpen(true)}
-          className="ml-3 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-[#05F2DB] transition hover:bg-white/10 lg:hidden"
+          className="ml-3 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-[#106c81] transition hover:bg-white/10 lg:hidden"
           aria-label="Open navigation menu"
           aria-expanded={mobileNavOpen}
         >
@@ -69,7 +69,7 @@ export default function Navbar() {
       </nav>
 
 
-      <div onClick={closeMobileNav} className={`fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${mobileNavOpen ? "visible opacity-100": "invisible opacity-0"
+      <div onClick={closeMobileNav} className={`fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${mobileNavOpen ? "visible opacity-100" : "invisible opacity-0"
         }`}
         aria-hidden="true"
       />
@@ -78,9 +78,8 @@ export default function Navbar() {
         id="mobile-navigation"
         aria-label="Mobile navigation"
         aria-hidden={!mobileNavOpen}
-        className={`fixed right-0 top-0 z-[70] flex h-dvh w-[85%] max-w-sm flex-col border-l border-white/10 bg-[#0B1120] shadow-2xl transition-transform duration-300 ease-in-out lg:hidden ${
-          mobileNavOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed right-0 top-0 z-[70] flex h-dvh w-[85%] max-w-sm flex-col border-l border-white/10 bg-[#0B1120] shadow-2xl transition-transform duration-300 ease-in-out lg:hidden ${mobileNavOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
 
         <div className="flex h-20 shrink-0 items-center justify-between border-b border-white/10 px-5">
@@ -97,7 +96,7 @@ export default function Navbar() {
               className="h-10 w-10 shrink-0 object-contain"
             />
 
-            <span className="truncate text-base font-bold text-[#05F2DB]">
+            <span className="truncate text-base font-bold text-white">
               ICT Club of Kalika
             </span>
           </Link>
@@ -119,12 +118,13 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={closeMobileNav}
-                style={{ transitionDelay: mobileNavOpen ? `${index * 35}ms` : "0ms" }}
-                className={`rounded-xl border border-transparent px-4 py-3.5 font-semibold text-[#ebe6e2] transition-all duration-200 hover:border-[#05F2DB]/20 hover:bg-[#05F2DB]/10 hover:text-[#05F2DB] ${
-                  mobileNavOpen
+                style={{
+                  transitionDelay: mobileNavOpen ? `${index * 35}ms` : "0ms",
+                }}
+                className={`px-4 py-3.5 font-semibold text-[#ebe6e2] transition-all duration-200 hover:text-[#106c81] active:text-[#106c81] focus-visible:text-[#106c81] ${mobileNavOpen
                     ? "translate-x-0 opacity-100"
                     : "translate-x-4 opacity-0"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>

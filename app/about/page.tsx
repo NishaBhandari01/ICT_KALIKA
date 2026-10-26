@@ -52,7 +52,8 @@ const AboutSection = ({ containerVariants,
     return (
         <div className='bg-[#0B1120]'>
 
-            <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-16 text-slate-200 md:px-16">
+            <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-28 text-slate-200 sm:px-6 sm:py-24 md:px-16">
+
                 <Image
                     src="/kmss-ground.jpg"
                     alt="Technology background"
@@ -64,77 +65,81 @@ const AboutSection = ({ containerVariants,
 
                 <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#0B1120]/80 via-[#0B1120]/70 to-[#0B1120]/90" />
 
+                {/* ICT Club Logo */}
                 <motion.div
                     initial={{ opacity: 0, x: -30, y: -20 }}
                     animate={{ opacity: 1, x: 0, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="absolute left-6 top-40 z-10 md:left-12 md:top-10"
+                    className="absolute left-4 top-5 z-10 sm:left-6 sm:top-8 md:left-12 md:top-10"
                 >
-                    <div className="">
-                        <Image
-                            src="/logo.avif"
-                            alt="ICT Club logo"
-                            width={90}
-                            height={90}
-                            className="h-24 w-24 object-contain md:h-32 md:w-32"
-                        />
-                    </div>
+                    <Image
+                        src="/logo.avif"
+                        alt="ICT Club logo"
+                        width={90}
+                        height={90}
+                        className="h-20 w-20 object-contain sm:h-22 sm:w-22 md:h-34 md:w-34"
+                    />
                 </motion.div>
 
+                {/* School Logo */}
                 <motion.div
                     initial={{ opacity: 0, x: 30, y: -20 }}
                     animate={{ opacity: 1, x: 0, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-                    className="absolute right-6 top- z-10 md:right-12 md:top-10"
+                    className="absolute right-4 top-5 z-10 sm:right-6 sm:top-8 md:right-12 md:top-10"
                 >
-                    <div className="">
-                        <Image
-                            src="/school-logo.png"
-                            alt="School logo"
-                            width={90}
-                            height={90}
-                            className="h-20 w-20 object-cover rounded-full md:h-28 md:w-28"
-                        />
-                    </div>
+                    <Image
+                        src="/school-logo.png"
+                        alt="School logo"
+                        width={90}
+                        height={90}
+                        className="h-18 w-18 rounded-full object-cover sm:h-20 sm:w-20 md:h-28 md:w-28"
+                    />
                 </motion.div>
 
 
                 <motion.div
-                    className="relative z-10 mx-auto max-w-4xl text-center space-y-6"
+                    className="relative z-10 mx-auto w-full max-w-4xl space-y-5 text-center sm:space-y-6"
                     variants={defaultContainer}
                     initial="hidden"
                     animate="visible"
                 >
-                    <motion.div variants={defaultItem} className="flex justify-center">
-                        <span className=" text-sm sm:text-xl font-semibold tracking-wider text-[#304489] ">
+                    <motion.div
+                        variants={defaultItem}
+                        className="flex justify-center px-10 sm:px-0"
+                    >
+                        <span className="text-sm font-semibold tracking-wider text-[#304489] sm:text-xl">
                             Kalika Manavgyan Secondary School
                         </span>
                     </motion.div>
 
                     <motion.h1
                         variants={defaultItem}
-                        className="bg-white bg-clip-text text-3xl font-extrabold text-transparent sm:text-4xl md:text-5xl tracking-tight pb-2"
+                        className="bg-white bg-clip-text pb-2 text-3xl font-extrabold tracking-tight text-transparent sm:text-4xl md:text-5xl"
                     >
                         ICT Club of Kalika
                     </motion.h1>
 
-
                     <motion.p
                         variants={defaultItem}
-                        className="mx-auto max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg md:text-xl font-light"
+                        className="mx-auto max-w-2xl px-1 text-sm font-light leading-relaxed text-slate-300 sm:text-lg md:text-xl"
                     >
                         Innovating the future through technology, hands-on learning, and collaborative student leadership.
                     </motion.p>
                 </motion.div>
 
+
                 <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: [0, 8, 0] }}
-                    transition={{ opacity: { duration: 1 }, y: { repeat: Infinity, duration: 2, ease: "easeInOut" } }}
-                    className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-1 text-slate-400 text-xs tracking-widest uppercase"
+                    transition={{
+                        opacity: { duration: 1 },
+                        y: { repeat: Infinity, duration: 2, ease: "easeInOut" },
+                    }}
+                    className="absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center gap-1 text-xs uppercase tracking-widest text-white sm:flex"
                 >
                     <span>Scroll Down</span>
-                    <ChevronDown className="w-4 h-4 text-[#2174EE]" />
+                    <ChevronDown className="h-4 w-4 text-[#4f6fa0]" />
                 </motion.div>
             </section>
 
@@ -344,7 +349,7 @@ const AboutSection = ({ containerVariants,
                                         </div>
                                     )}
 
-                      
+
                                     {item.badge && (
                                         <span className="absolute right-2 top-4 z-10 inline-flex items-center rounded-full bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-[#60A5FA] backdrop-blur-md">
                                             {item.badge}
@@ -393,11 +398,11 @@ const AboutSection = ({ containerVariants,
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                             <Link
                                 href="/team"
-                                className="group inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-xl bg-white text-[#2a8aba] px-7 py-3.5 font-semibold  transition-all duration-200 hover:opacity-95 cursor-pointer"
+                                className="group inline-flex w-fit max-w-full self-center sm:self-auto items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#2a8aba] transition-all duration-200 hover:opacity-95 active:scale-[0.98] sm:gap-2.5 sm:px-7 sm:py-3.5 sm:text-base cursor-pointer"
                             >
-                                <Users className="h-4 w-4" />
-                                <span>Meet Our Team</span>
-                                <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                                <Users className="h-4 w-4 shrink-0" />
+                                <span className="whitespace-nowrap">Meet Our Team</span>
+                                <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:translate-x-1" />
                             </Link>
 
                             <Link

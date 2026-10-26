@@ -13,6 +13,7 @@ import {
   ArrowRight,
   Mail,
 } from "lucide-react";
+import CollaborationDiagramMobile from "../components/CollaborationDiagramMob";
 
 
 
@@ -68,7 +69,15 @@ const Page = () => {
       <section className="text-white relative overflow-hidden pb-10 sm:pb-14">
 
 
-        <CollaborationDiagram />
+  
+        <div className="block lg:hidden">
+          <CollaborationDiagramMobile />
+        </div>
+
+
+        <div className="hidden lg:block">
+          <CollaborationDiagram />
+        </div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 lg:space-y-20 -mt-16 sm:-mt-24">
 

@@ -229,7 +229,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid gap-6 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-4 md:grid-cols-2 md:p-6">
+          <div className="grid gap-6 overflow-hidden rounded-xl  border-white/10 bg-white/5 p-4 md:grid-cols-2 md:p-6">
 
             <div className="min-h-[450px] overflow-hidden rounded-xl">
               <iframe

@@ -110,7 +110,7 @@ const Hero = () => {
 
                 <div className="order-2 md:order-2 flex flex-col items-center justify-center">
                     <div className="relative flex h-[300px] w-[300px] items-center justify-center sm:h-[360px] sm:w-[360px]">
-                    
+
 
                         {[0, 120, 240].map((angle, index) => (
                             <motion.div
@@ -133,7 +133,7 @@ const Hero = () => {
                             </motion.div>
                         ))}
 
-            
+
                         <motion.div className="relative z-10 h-36 w-36 overflow-hidden rounded-full  sm:h-40 sm:w-40 animate-pulse">
                             <Image
                                 src="/logo.avif"
@@ -153,7 +153,7 @@ const Hero = () => {
                         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                         className="flex flex-col items-center mt-4"
                     >
-                        <h1 className="text-center text-3xl sm:text-4xl font-extrabold tracking-tight bg-white bg-clip-text text-transparent">
+                        <h1 className="text-center text-3xl sm:text-4xl font-extrabold tracking-tight ">
                             ICT Club of Kalika
                         </h1>
                         <p className="mt-2 max-w-sm text-center text-sm leading-6 text-gray-400">
@@ -203,7 +203,7 @@ const Hero = () => {
                         whileHover={{ y: -3 }}
                         whileTap={{ scale: 0.98 }}
                         transition={{ duration: 0.25, ease: "easeOut" }}
-                        className="mt-5 inline-flex items-center rounded-3xl bg-white px-6 py-3 font-semibold text-[#2a8aba] transition-shadow duration-300 hover:shadow-lg hover:shadow-[#aaa]/20"
+                        className="mt-5 inline-flex w-fit self-center md:self-start items-center justify-center rounded-3xl bg-white px-5 py-2.5 sm:px-6 sm:py-3 font-semibold text-[#2a8aba] transition-shadow duration-300 hover:shadow-lg hover:shadow-[#aaa]/20 whitespace-nowrap"
                     >
                         Explore Events →
                     </motion.a>
