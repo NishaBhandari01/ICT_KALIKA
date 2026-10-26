@@ -9,10 +9,13 @@ import Snowfall from "./components/snowfall";
 export const metadata = {
   title: {
     default: 'ICT Club of Kalika - Student led IT Club',
-    template: '%s | ICT Club of Kalika'
+    template: '%s | ICT Club of Kalika',
 
   },
   description: 'Innovate • Educate • Inspire. Founded in 2022 at Kalika Manavgyan Secondary School, ICT Club of Kalika is a vibrant community of students passionate about technology. We empower youth through hands-on workshops, tech projects, and collaborative events—promoting digital literacy, coding, robotics, and ICT innovations.',
+   icons: {
+    icon: "/logo.avif",
+  },
   keywords: [
     'ICT KALIKA',
     'ICT CLUB OF KALIKA',
@@ -74,21 +77,21 @@ export const metadata = {
     images: ['/images/logo.png'],
     creator: '@ictkalika',
   },
-  icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
-    shortcut: '/favicon.ico',
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-    other: [
-      { rel: 'icon', url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
-      { rel: 'icon', url: '/favicon-512x512.png', sizes: '512x512', type: 'image/png' },
-    ],
-  },
+  // icons: {
+  //   icon: [
+  //     { url: '/favicon.ico' },
+  //     { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+  //     { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+  //   ],
+  //   shortcut: '/favicon.ico',
+  //   apple: [
+  //     { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+  //   ],
+  //   other: [
+  //     { rel: 'icon', url: '/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+  //     { rel: 'icon', url: '/favicon-512x512.png', sizes: '512x512', type: 'image/png' },
+  //   ],
+  // },
   manifest: '/site.webmanifest',
  
   robots: {

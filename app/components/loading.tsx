@@ -70,7 +70,7 @@ export default function LoadingPage() {
 
 
           <motion.div
-            className="relative z-10 h-32 w-32 overflow-hidden rounded-full border border-cyan-300/60 bg-[#0B1120] sm:h-40 sm:w-40"
+            className="relative z-10 h-32 w-32 overflow-hidden rounded-full  bg-[#0B1120] sm:h-40 sm:w-40"
             animate={{
               boxShadow: [
                 "0 0 20px rgba(59,130,246,0.15)",
@@ -91,7 +91,7 @@ export default function LoadingPage() {
               fill
               priority
               sizes="(max-width: 640px) 128px, 160px"
-              className="rounded-full object-contain p-1"
+              className="rounded-full object-contain "
             />
           </motion.div>
         </motion.div>
@@ -107,13 +107,9 @@ export default function LoadingPage() {
 
         <motion.p
           variants={itemVariants}
-          className="mt-3 flex items-center gap-2 text-sm font-medium tracking-wide text-[#10504A] sm:text-base"
+          className="mt-3 flex items-center gap-2 text-sm font-medium tracking-wide text-[#105F58] sm:text-base"
         >
-          <span>Innovate</span>
-          <span className="text-[#05F2DB]">•</span>
-          <span>Educate</span>
-          <span className="text-[#05F2DB]">•</span>
-          <span>Inspire</span>
+         Innovate. Inspire. Impact
         </motion.p>
 
         <motion.div

@@ -65,7 +65,7 @@ const itemVariants: Variants = {
                     <motion.div
                         whileHover={{ scale: 1.05 }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                        className="relative h-32 w-32 sm:h-40 sm:w-40 overflow-hidden rounded-full border-2 border-[#05F2DB]/60 bg-[#0B1120] p-2 shadow-[0_0_40px_rgba(5,242,219,0.3)] backdrop-blur-md"
+                        className="relative h-32 w-32 sm:h-40 sm:w-40 overflow-hidden rounded-full bg-[#0B1120] p-2 shadow-[0_0_40px_rgba(5,242,219,0.3)] backdrop-blur-md"
                     >
                         <Image
                             src="/logo.avif"
