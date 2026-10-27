@@ -27,12 +27,12 @@ technology education, digital literacy, creativity, and innovation among student
 
 ## Technology Stack
 
-Next.js   - as a framework and routing 
-Typescript  -  for type safety and consistent code
-Framer motion - for Animation
-Lucide React  - Icons
-FlatIcon -  for Icons
-Vercel - for deployment 
+- Next.js   - as a framework and routing 
+- Typescript  -  for type safety and consistent code
+- Framer motion - for Animation
+- Lucide React  - Icons
+- FlatIcon -  for Icons
+- Vercel - for deployment 
 
 
 
