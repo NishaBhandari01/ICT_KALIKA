@@ -9,7 +9,7 @@ ICT Club of Kalika — Official Website
 </p>
 
 <p align="center">
-  <a href="https://ictkalika.tech/">Live Website</a> ·
+  <a href="https://ict-kalika.vercel.app">Live Website</a> ·
   <a href="https://github.com/NishaBhandari01/ICT_KALIKA">GitHub Repository</a>
 </p>
 
